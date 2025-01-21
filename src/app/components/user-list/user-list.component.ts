@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UserSerice } from '../../user.service';
+import { UserService } from '../../user.service';
 import { AsyncPipe } from '@angular/common';
 import { UserCardComponent } from '../user-card/user-card.component';
 
@@ -10,7 +10,7 @@ import { UserCardComponent } from '../user-card/user-card.component';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent implements OnInit {
-  public userService = inject(UserSerice);
+  public userService = inject(UserService);
 
   ngOnInit(): void {
     this.userService.getUsers();

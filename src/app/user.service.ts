@@ -4,7 +4,7 @@ import { BehaviorSubject } from "rxjs";
 import { User } from "./models/User";
 
 @Injectable({providedIn: "root"})
-export class UserSerice {
+export class UserService {
     private apiService = inject(UserApiService);
 
     private readonly userServiceSubject = new BehaviorSubject<User[]>([]);

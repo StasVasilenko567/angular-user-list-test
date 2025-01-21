@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { UserSerice } from '../../user.service';
+import { UserService } from '../../user.service';
 import { User } from '../../models/User';
 import { generateUID } from '../../utils/UuidGenerator';
 
@@ -13,7 +13,7 @@ import { generateUID } from '../../utils/UuidGenerator';
 export class ToolboxComponent {
   @Input() public nameFiled: string = '';
 
-  private userService = inject(UserSerice)
+  private userService = inject(UserService)
 
   public addUser() {
     const tempU: User = {

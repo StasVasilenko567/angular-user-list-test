@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { User } from '../../models/User';
-import { UserSerice } from '../../user.service';
+import { UserService } from '../../user.service';
 
 @Component({
   selector: 'app-user-card',
@@ -11,7 +11,7 @@ import { UserSerice } from '../../user.service';
 export class UserCardComponent {
   @Input() user: User | undefined;
 
-  private userService = inject(UserSerice);
+  private userService = inject(UserService);
 
   public deleteUser() {
     this.userService.deleteUser(this.user?.id as string);
