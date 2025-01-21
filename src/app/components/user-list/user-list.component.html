@@ -1,0 +1,5 @@
+<div>
+    @for (user of userService.users$ | async; track $index) {
+        <app-user-card [user]="user"></app-user-card>
+    }
+</div>

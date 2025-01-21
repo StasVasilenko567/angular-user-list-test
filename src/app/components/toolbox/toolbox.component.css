@@ -1,0 +1,8 @@
+div {
+    display: flex;
+
+    flex-wrap: nowrap;
+    gap: 10px;
+
+    margin-bottom: 20px;
+}
