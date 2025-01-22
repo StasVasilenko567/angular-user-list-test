@@ -21,7 +21,7 @@ export class UserCardComponent {
     this.userService.deleteUser(this.user?.id as string);
   }
 
-  openDialog() {
+  public openDialog() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '600px',
       data: this.user,

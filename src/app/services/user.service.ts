@@ -12,13 +12,13 @@ export class UserService {
 
     getUsers() {
         this.apiService.getUsers().subscribe(
-            val => this.userServiceSubject.next(val)
+            (val: User[]) => this.userServiceSubject.next(val)
         )
     }
 
     deleteUser(id: string) {
         this.apiService.deleteUser(id).subscribe(
-            val => this.userServiceSubject.next(
+            (val: User) => this.userServiceSubject.next(
                 this.userServiceSubject.getValue().filter(user => user.id !== val.id)
             )
         )
@@ -26,7 +26,7 @@ export class UserService {
 
     addUser(user: User) {
         this.apiService.addUser(user).subscribe(
-            val => this.userServiceSubject.next(
+            (val: User) => this.userServiceSubject.next(
                 [...this.userServiceSubject.getValue(), val]
             )
         )
@@ -34,8 +34,8 @@ export class UserService {
 
     updateUser(id: string, user: User) {
         this.apiService.updateUser(id, user).subscribe(
-            val => this.userServiceSubject.next(
-                this.userServiceSubject.getValue().map(u => u.id === val.id? val : u)
+            (val: User) => this.userServiceSubject.next(
+                this.userServiceSubject.getValue().map((u: User) => u.id === val.id ? val : u)
             )
         )
     }

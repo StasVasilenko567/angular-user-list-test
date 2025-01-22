@@ -3,19 +3,19 @@
     <form [formGroup]="formBuilder" novalidate>
         <mat-form-field>
             <mat-label>Имя пользователя</mat-label>
-            <input matInput formControlName="name" value="{{user.name}}">
+            <input matInput formControlName="name">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Ник</mat-label>
-            <input matInput formControlName="username" value="{{user.username}}">
+            <input matInput formControlName="username">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Email</mat-label>
-            <input matInput formControlName="email" value="{{user.email}}">
+            <input matInput formControlName="email">
         </mat-form-field>
         <mat-form-field>
             <mat-label>Телефон</mat-label>
-            <input matInput formControlName="phone" value="{{user.phone}}">
+            <input matInput formControlName="phone">
         </mat-form-field>
     </form>
 </mat-dialog-content>
