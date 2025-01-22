@@ -1,4 +1,9 @@
 <div>
-    <button (click)="addUser()">Добавить пользователя</button>
-    <input type="text" placeholder="Имя пользователя" [(ngModel)]="nameFiled" />
+    <form [formGroup]="toolboxForm" novalidate (ngSubmit)="addUser()">
+        <button [disabled]="toolboxForm.invalid">Добавить пользователя</button>
+        <input placeholder="Имя пользователя" name="name" formControlName="name" />
+        <input placeholder="Ник" name="username" formControlName="username" />
+        <input placeholder="Email" name="email" formControlName="email" />
+        <input placeholder="Телефон" name="phone" formControlName="phone" />
+    </form>
 </div>

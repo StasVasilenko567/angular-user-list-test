@@ -1,11 +1,11 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { UserService } from '../../user.service';
-import { AsyncPipe } from '@angular/common';
-import { UserCardComponent } from '../user-card/user-card.component';
+import { UserService } from '@services/user.service';
+import { AsyncPipe, NgFor } from '@angular/common';
+import { UserCardComponent } from '@components/user-card/user-card.component';
 
 @Component({
   selector: 'app-user-list',
-  imports: [AsyncPipe, UserCardComponent],
+  imports: [AsyncPipe, UserCardComponent, NgFor],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })
