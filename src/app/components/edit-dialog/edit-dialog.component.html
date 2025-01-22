@@ -1,0 +1,25 @@
+<h2 mat-dialog-title>Редактирование {{user.name}}</h2>
+<mat-dialog-content>
+    <form [formGroup]="formBuilder" novalidate>
+        <mat-form-field>
+            <mat-label>Имя пользователя</mat-label>
+            <input matInput formControlName="name" value="{{user.name}}">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Ник</mat-label>
+            <input matInput formControlName="username" value="{{user.username}}">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email" value="{{user.email}}">
+        </mat-form-field>
+        <mat-form-field>
+            <mat-label>Телефон</mat-label>
+            <input matInput formControlName="phone" value="{{user.phone}}">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="cancel()">Отмена</button>
+    <button [disabled]="formBuilder.invalid" mat-button (click)="goahead()" cdkFocusInitial>Ok</button>
+</mat-dialog-actions>

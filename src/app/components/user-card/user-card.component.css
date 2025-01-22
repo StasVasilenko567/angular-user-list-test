@@ -4,6 +4,10 @@ div {
     padding: 10px;
     margin: 10px;
     width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 button {

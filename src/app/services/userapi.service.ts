@@ -23,4 +23,8 @@ export class UserApiService {
     addUser(user: User): Observable<User> {
         return this.http.post<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS, user);
     }
+
+    updateUser(id: string, user: User): Observable<User> {
+        return this.http.put<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS + id, user);
+    }
 }

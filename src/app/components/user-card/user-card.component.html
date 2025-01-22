@@ -1,7 +1,8 @@
 <div>
     <p><b>Name: </b>{{user?.name}}</p>
     <p><b>Username: </b>{{user?.username}}</p>
-    <p><b>Phone: </b>{{user?.phone}}</p>
     <p><b>Email: </b>{{user?.email}}</p>
+    <p><b>Phone: </b>{{user?.phone}}</p>
+    <button (click)="openDialog()">Изменить</button>
     <button (click)="deleteUser()">Удалить</button>
 </div>

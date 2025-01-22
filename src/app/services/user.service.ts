@@ -31,4 +31,12 @@ export class UserService {
             )
         )
     }
+
+    updateUser(id: string, user: User) {
+        this.apiService.updateUser(id, user).subscribe(
+            val => this.userServiceSubject.next(
+                this.userServiceSubject.getValue().map(u => u.id === val.id? val : u)
+            )
+        )
+    }
 }

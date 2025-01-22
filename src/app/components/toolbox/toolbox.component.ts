@@ -1,8 +1,9 @@
-import { Component, inject, Input } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserService } from '@services/user.service';
 import { User } from '@models/User';
 import { generateUID } from '@utils/UuidGenerator';
+import { GetFormBuilder } from '@models/UserForm';
 
 @Component({
   selector: 'app-toolbox',
@@ -14,16 +15,11 @@ export class ToolboxComponent {
 
   private userService = inject(UserService)
 
-  public toolboxForm: FormGroup = new FormGroup({
-    "name": new FormControl(null, [Validators.required]),
-    "username": new FormControl(null, [Validators.required]),
-    "email": new FormControl(null, [Validators.required, Validators.email]),
-    "phone": new FormControl(null, [Validators.required, Validators.pattern('[0-9]{10}')]),
-  });
+  public toolboxForm = GetFormBuilder();
 
   public addUser() {
     const inputValue = this.toolboxForm.value;
-    
+
     const tempU: User = {
       id: generateUID(),
       name: inputValue.name,
