@@ -1,9 +1,10 @@
 import { Component, inject } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '@services/user.service';
 import { User } from '@models/User';
 import { generateUID } from '@utils/UuidGenerator';
-import { GetFormBuilder } from '@models/UserForm';
+import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-toolbox',
@@ -14,19 +15,33 @@ import { GetFormBuilder } from '@models/UserForm';
 export class ToolboxComponent {
 
   private userService = inject(UserService)
+  readonly dialog = inject(MatDialog);  
 
-  public toolboxForm = GetFormBuilder();
-
-  public addUser() {
-    const inputValue = this.toolboxForm.value;
+  public addUser(inputValue: User) {
 
     const tempU: User = {
       id: generateUID(),
-      name: inputValue.name,
-      username: inputValue.username,
-      email: inputValue.email,
-      phone: inputValue.phone,
+      name: inputValue.name as string,
+      username: inputValue.username as string,
+      email: inputValue.email as string,
+      phone: inputValue.phone as string,
     }
     this.userService.addUser(tempU);
+  }
+
+  public openDialog() {
+    const dialogRef = this.dialog.open(EditDialogComponent, {
+          width: '600px',
+          data: {
+            user: null,
+            title: 'Добавить пользователя'
+          },
+        });
+    
+        dialogRef.afterClosed().subscribe((result: User | null) => {
+          if (result) {
+            this.addUser(result);
+          }
+    });
   }
 }

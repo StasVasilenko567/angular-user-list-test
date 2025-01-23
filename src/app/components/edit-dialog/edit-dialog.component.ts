@@ -1,11 +1,10 @@
-import { Component, inject, model } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgIf } from '@angular/common';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
-  MatDialog,
   MatDialogActions,
-  MatDialogClose,
   MatDialogContent,
   MatDialogRef,
   MatDialogTitle,
@@ -13,7 +12,11 @@ import {
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { User } from '@models/User';
-import { GetFormBuilder } from '@models/UserForm';
+
+export interface EditDialogData {
+  user?: User;
+  title: string;
+}
 
 @Component({
   selector: 'app-edit-dialog',
@@ -24,14 +27,21 @@ import { GetFormBuilder } from '@models/UserForm';
     MatDialogTitle,
     MatDialogContent,
     MatDialogActions,
-    ReactiveFormsModule],
+    ReactiveFormsModule,
+    NgIf
+  ],
   templateUrl: './edit-dialog.component.html',
   styleUrl: './edit-dialog.component.css'
 })
 export class EditDialogComponent {
-  readonly user = inject<User>(MAT_DIALOG_DATA);
+  readonly data = inject<EditDialogData>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<EditDialogComponent>);
-  public formBuilder = GetFormBuilder(this.user);
+  public formBuilder: FormGroup = new FormGroup({
+      "name": new FormControl(this.data.user?.name, [Validators.required]),
+      "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+      "email": new FormControl(this.data.user?.email, [Validators.required, Validators.email]),
+      "phone": new FormControl(this.data.user?.phone, [Validators.required, Validators.pattern('[0-9]{10}')]),
+  });
 
   public cancel(): void {
     this.dialogRef.close();

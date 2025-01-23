@@ -3,7 +3,6 @@ import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
 import { User } from '@models/User';
 import { UserService } from '@services/user.service';
-import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-user-card',
@@ -24,7 +23,10 @@ export class UserCardComponent {
   public openDialog() {
     const dialogRef = this.dialog.open(EditDialogComponent, {
       width: '600px',
-      data: this.user,
+      data: {
+        user: this.user,
+        title: 'Редактировать пользователя'
+      },
     });
 
     dialogRef.afterClosed().subscribe((result: User | null) => {

@@ -1,18 +1,22 @@
-<h2 mat-dialog-title>Редактирование {{user.name}}</h2>
+<h2 mat-dialog-title>{{data.title}}</h2>
 <mat-dialog-content>
     <form [formGroup]="formBuilder" novalidate>
+        <p *ngIf="formBuilder.controls['name'].invalid">Введите имя!</p>
         <mat-form-field>
             <mat-label>Имя пользователя</mat-label>
             <input matInput formControlName="name">
         </mat-form-field>
+        <p *ngIf="formBuilder.controls['username'].invalid">Ник должен содержать не менее 4 символов и не более 20!</p>
         <mat-form-field>
             <mat-label>Ник</mat-label>
             <input matInput formControlName="username">
         </mat-form-field>
+        <p *ngIf="formBuilder.controls['email'].invalid">Почта должна быть валидной!</p>
         <mat-form-field>
             <mat-label>Email</mat-label>
             <input matInput formControlName="email">
         </mat-form-field>
+        <p *ngIf="formBuilder.controls['phone'].invalid">Номер должен содержать 10 цифр!</p>
         <mat-form-field>
             <mat-label>Телефон</mat-label>
             <input matInput formControlName="phone">
@@ -21,5 +25,5 @@
 </mat-dialog-content>
 <mat-dialog-actions>
     <button mat-button (click)="cancel()">Отмена</button>
-    <button [disabled]="formBuilder.invalid" mat-button (click)="goahead()" cdkFocusInitial>Ok</button>
+    <button [disabled]="formBuilder.invalid" mat-button (click)="goahead()">Ok</button>
 </mat-dialog-actions>
