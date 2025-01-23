@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
-import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject, OnInit } from '@angular/core';
+import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -13,9 +13,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import { User } from '@models/user.model';
 
-export interface EditDialogData {
+interface EditDialogData {
   user?: User;
   title: string;
+}
+
+interface EditDialogForm {
+  name:  FormControl<string | null | undefined>;
+  username: FormControl<string | null | undefined>;
+  email: FormControl<string | null | undefined>;
+  phone: FormControl<string | null | undefined>; 
 }
 
 @Component({
@@ -36,11 +43,11 @@ export interface EditDialogData {
 export class EditDialogComponent {
   readonly data = inject<EditDialogData>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<EditDialogComponent>);
-  public formBuilder: FormGroup = new FormGroup({
-      "name": new FormControl(this.data.user?.name, [Validators.required]),
-      "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
-      "email": new FormControl(this.data.user?.email, [Validators.required, Validators.email]),
-      "phone": new FormControl(this.data.user?.phone, [Validators.required, Validators.pattern('[0-9]{10}')]),
+  public form: FormGroup<EditDialogForm> = new FormGroup<EditDialogForm>({
+    "name": new FormControl(this.data.user?.name, [Validators.required]),
+    "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
+    "email": new FormControl(this.data.user?.email, [Validators.required, Validators.email]),
+    "phone": new FormControl(this.data.user?.phone, [Validators.required, Validators.pattern('[0-9]{10}')]),
   });
 
   public cancel(): void {
@@ -48,7 +55,7 @@ export class EditDialogComponent {
   }
 
   public goahead(): void {
-    const values = this.formBuilder.value;
+    const values = this.form.value;
     this.dialogRef.close(values); 
   }
 }
