@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { UserService } from '@services/user.service';
-import { User } from '@models/User';
+import { User } from '@models/user.model';
 import { generateUID } from '@utils/UuidGenerator';
 import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
 import { MatDialog } from '@angular/material/dialog';

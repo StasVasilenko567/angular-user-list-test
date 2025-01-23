@@ -11,7 +11,7 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { User } from '@models/User';
+import { User } from '@models/user.model';
 
 export interface EditDialogData {
   user?: User;

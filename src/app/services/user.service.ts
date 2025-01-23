@@ -1,7 +1,7 @@
 import { inject, Injectable } from "@angular/core";
 import { UserApiService } from "./userapi.service";
 import { BehaviorSubject } from "rxjs";
-import { User } from "@models/User";
+import { User } from "@models/user.model";
 
 @Injectable({providedIn: "root"})
 export class UserService {
@@ -18,24 +18,24 @@ export class UserService {
 
     deleteUser(id: string) {
         this.apiService.deleteUser(id).subscribe(
-            (val: User) => this.userServiceSubject.next(
-                this.userServiceSubject.getValue().filter(user => user.id !== val.id)
+            (user: User) => this.userServiceSubject.next(
+                this.userServiceSubject.getValue().filter(u => u.id !== user.id)
             )
         )
     }
 
     addUser(user: User) {
         this.apiService.addUser(user).subscribe(
-            (val: User) => this.userServiceSubject.next(
-                [...this.userServiceSubject.getValue(), val]
+            (user: User) => this.userServiceSubject.next(
+                [...this.userServiceSubject.getValue(), user]
             )
         )
     }
 
     updateUser(id: string, user: User) {
         this.apiService.updateUser(id, user).subscribe(
-            (val: User) => this.userServiceSubject.next(
-                this.userServiceSubject.getValue().map((u: User) => u.id === val.id ? val : u)
+            (user: User) => this.userServiceSubject.next(
+                this.userServiceSubject.getValue().map((u: User) => u.id === user.id ? user : u)
             )
         )
     }

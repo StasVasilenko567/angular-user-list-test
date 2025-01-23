@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
-import { User } from '@models/User';
+import { User } from '@models/user.model';
 import { UserService } from '@services/user.service';
 
 @Component({
