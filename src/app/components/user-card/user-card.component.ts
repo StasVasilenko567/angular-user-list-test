@@ -2,7 +2,8 @@ import { Component, inject, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
 import { User } from '@models/user.model';
-import { UserService } from '@services/user.service';
+import { Store } from '@ngrx/store';
+import { userActions } from 'app/store/user.actions';
 
 @Component({
   selector: 'app-user-card',
@@ -12,12 +13,12 @@ import { UserService } from '@services/user.service';
 })
 export class UserCardComponent {
   @Input() user: User | undefined;
-
+  
   readonly dialog = inject(MatDialog);
-  private userService = inject(UserService);
+  private readonly store = inject(Store);
 
   public deleteUser() {
-    this.userService.deleteUser(this.user?.id as string);
+    this.store.dispatch(userActions.deleteUser({ id: this.user?.id as string }));
   }
 
   public openDialog() {
@@ -31,7 +32,7 @@ export class UserCardComponent {
 
     dialogRef.afterClosed().subscribe((result: User | null) => {
       if (result) {
-        this.userService.updateUser(this.user?.id as string, result);
+        this.store.dispatch(userActions.updateUser({ id: this.user?.id as string, user: result }));
       }
     });
   }

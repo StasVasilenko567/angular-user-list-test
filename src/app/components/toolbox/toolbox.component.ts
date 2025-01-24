@@ -1,10 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { UserService } from '@services/user.service';
 import { User } from '@models/user.model';
 import { generateUID } from '@utils/UuidGenerator';
 import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
+import { Store } from '@ngrx/store';
+import { userActions } from 'app/store/user.actions';
 
 @Component({
   selector: 'app-toolbox',
@@ -14,11 +15,10 @@ import { MatDialog } from '@angular/material/dialog';
 })
 export class ToolboxComponent {
 
-  private userService = inject(UserService)
   readonly dialog = inject(MatDialog);  
+  private readonly store = inject(Store);
 
   public addUser(inputValue: User) {
-
     const tempU: User = {
       id: generateUID(),
       name: inputValue.name as string,
@@ -26,7 +26,7 @@ export class ToolboxComponent {
       email: inputValue.email as string,
       phone: inputValue.phone as string,
     }
-    this.userService.addUser(tempU);
+    this.store.dispatch(userActions.addUser({ user: tempU }));
   }
 
   public openDialog() {
