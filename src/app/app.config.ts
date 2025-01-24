@@ -7,14 +7,14 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
 import { provideStore } from '@ngrx/store';
 import { provideEffects } from '@ngrx/effects';
 import { UserEffects } from './store/user.effects';
-import { userFeature } from './store/user.reducers';
+import { userFeature, userFeatureKey } from './store/user.reducers';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
     provideHttpClient(), provideAnimationsAsync(),
-    provideStore({ 'user': userFeature.reducer }),
+    provideStore({ [userFeatureKey]: userFeature.reducer }),
     provideEffects([UserEffects]),
   ]
 };

@@ -12,11 +12,10 @@ import { userSelectors } from 'app/store/user.selectors';
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent implements OnInit {
-  private store = inject(Store);
-
-  ngOnInit(): void {
+  private readonly store = inject(Store);
+  public users$ = this.store.select(userSelectors.selectUsers);
+  
+  public ngOnInit(): void {
     this.store.dispatch(userActions.loadUsers());
   }
-
-  public users$ = this.store.select(userSelectors.selectUsers);
 }

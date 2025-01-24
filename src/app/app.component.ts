@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
-import { UserListComponent } from './components/user-list/user-list.component';
-import { ToolboxComponent } from './components/toolbox/toolbox.component';
-import { StoreModule } from '@ngrx/store';  
-import { userFeature } from './store/user.reducers';
-import { EffectsModule } from '@ngrx/effects';
-import { UserEffects } from './store/user.effects';
+import { UserListComponent } from '@components/user-list/user-list.component';
+import { ToolboxComponent } from '@components/toolbox/toolbox.component';
 
 @Component({
   selector: 'app-root',

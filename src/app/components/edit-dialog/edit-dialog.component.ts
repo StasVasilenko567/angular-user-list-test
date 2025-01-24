@@ -43,7 +43,7 @@ interface EditDialogForm {
 export class EditDialogComponent {
   readonly data = inject<EditDialogData>(MAT_DIALOG_DATA);
   readonly dialogRef = inject(MatDialogRef<EditDialogComponent>);
-  public form: FormGroup<EditDialogForm> = new FormGroup<EditDialogForm>({
+  public form: FormGroup<EditDialogForm> = new FormGroup({
     "name": new FormControl(this.data.user?.name, [Validators.required]),
     "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
     "email": new FormControl(this.data.user?.email, [Validators.required, Validators.email]),
@@ -54,7 +54,7 @@ export class EditDialogComponent {
     this.dialogRef.close();
   }
 
-  public goahead(): void {
+  public submit(): void {
     const values = this.form.value;
     this.dialogRef.close(values); 
   }
