@@ -46,7 +46,6 @@ export const userFeature = createFeature({
             isError: true 
         })
     ),
-  //
     on(
         userActions.updateUser, 
         (state) => ({ 
@@ -70,7 +69,6 @@ export const userFeature = createFeature({
             isError: true 
         })
     ),
-  //
     on(
         userActions.addUser, 
         (state) => ({ 
@@ -80,7 +78,10 @@ export const userFeature = createFeature({
     ),
     on(
         userActions.addUserSuccess, 
-        (state, action) => ({ ...state, isLoading: false, data: { users: [...state.data.users, action.user] } })
+        (state, action) => ({ 
+            ...state, 
+            isLoading: false, 
+            data: { users: [...state.data.users, action.user] } })
     ),
     on(
         userActions.addUserFailure, (state) => ({ 
@@ -89,7 +90,6 @@ export const userFeature = createFeature({
             isError: true 
         })
     ),
-  //
     on(
         userActions.deleteUser, 
         (state) => ({ 

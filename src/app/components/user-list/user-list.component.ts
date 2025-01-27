@@ -14,9 +14,10 @@ import { Subscription } from 'rxjs';
 })
 export class UserListComponent implements OnInit, OnDestroy {
   private readonly store = inject(Store);
-  public users$ = this.store.select(userSelectors.selectUsers);
 
+  public users$ = this.store.select(userSelectors.selectUsers);
   public isError$ = this.store.select(userSelectors.selectIsError);
+  
   private isErrorSubscription: Subscription | undefined;
 
   public ngOnInit(): void {

@@ -11,7 +11,8 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { User } from '@models/user.model';
+import { SelectorComponent } from '@components/selector/selector.component';
+import { User, UserRole } from '@models/user.model';
 
 interface EditDialogData {
   user?: User;
@@ -23,6 +24,7 @@ interface EditDialogForm {
   username: FormControl<string | null | undefined>;
   email: FormControl<string | null | undefined>;
   phone: FormControl<string | null | undefined>; 
+  role: FormControl<UserRole | null>;
 }
 
 @Component({
@@ -35,7 +37,8 @@ interface EditDialogForm {
     MatDialogContent,
     MatDialogActions,
     ReactiveFormsModule,
-    NgIf
+    NgIf,
+    SelectorComponent
   ],
   templateUrl: './edit-dialog.component.html',
   styleUrl: './edit-dialog.component.css'
@@ -48,7 +51,14 @@ export class EditDialogComponent {
     "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),
     "email": new FormControl(this.data.user?.email, [Validators.required, Validators.email]),
     "phone": new FormControl(this.data.user?.phone, [Validators.required, Validators.pattern('[0-9]{10}')]),
+    "role": new FormControl(this.data.user?.role || UserRole.USER, [Validators.required]),
   });
+
+  public roles = [
+    {id: UserRole.ADMIN, name: 'Админ'},
+    {id: UserRole.USER, name: 'Пользователь'},
+    {id: UserRole.BARABULKA, name: 'Барабулька'},
+  ];
 
   public cancel(): void {
     this.dialogRef.close();

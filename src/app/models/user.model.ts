@@ -4,4 +4,11 @@ export type User = {
     username?: string;
     email?: string;
     phone?: string;
+    role: UserRole;
+}
+
+export enum UserRole {
+    ADMIN = 'admin',
+    USER = 'user',
+    BARABULKA = 'barabulka',
 }
