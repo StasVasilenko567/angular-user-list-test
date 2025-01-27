@@ -21,13 +21,12 @@ import { AbstractControl, ControlValueAccessor, FormsModule, NG_VALIDATORS, NG_V
   ]
 })
 export class SelectorComponent implements ControlValueAccessor, OnInit, Validator {
-  @Input() items: {id: any, name: string}[] = [];
-  @Input() selected: any;
+  @Input() public items: {id: any, name: string}[] = [];
+  @Input() public selected: any;
 
   public firstSelected: any;
   
   public onTouched: () => void = () => {};
-
   public onChange: (value: any) => void = (value: any) => {};
 
   public onSelectionChange(event: any): void {
@@ -37,8 +36,8 @@ export class SelectorComponent implements ControlValueAccessor, OnInit, Validato
   }
 
   public ngOnInit(): void {
+    this.firstSelected = this.selected ? this.selected : null;
     this.selected = this.selected ? this.selected : this.items[0].id;
-    this.firstSelected = this.selected;
   }
 
   public writeValue(value: any): void {
