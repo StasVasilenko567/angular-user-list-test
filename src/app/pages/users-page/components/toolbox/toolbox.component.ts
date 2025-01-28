@@ -41,7 +41,6 @@ export class ToolboxComponent {
     
         dialogRef.afterClosed().subscribe((result: User | null) => {
           if (result) {
-            console.log(result);
             this.addUser(result);
           }
     });
