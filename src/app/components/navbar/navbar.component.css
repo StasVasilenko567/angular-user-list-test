@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: black;
+    transition: all 0.2s ease;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}

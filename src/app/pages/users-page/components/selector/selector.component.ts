@@ -1,5 +1,5 @@
 import { NgFor } from '@angular/common';
-import { Component, forwardRef, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
 import { AbstractControl, ControlValueAccessor, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
 @Component({
   standalone: true,
@@ -24,6 +24,8 @@ export class SelectorComponent implements ControlValueAccessor, OnInit, Validato
   @Input() public items: {id: any, name: string}[] = [];
   @Input() public selected: any;
 
+  @Output() public onUpdate: EventEmitter<any> = new EventEmitter<any>();
+
   public firstSelected: any;
   
   public onTouched: () => void = () => {};
@@ -33,6 +35,7 @@ export class SelectorComponent implements ControlValueAccessor, OnInit, Validato
     this.onTouched();
     this.selected = event.target.value;
     this.onChange(event.target.value);
+    this.onUpdate.emit(event.target.value);
   }
 
   public ngOnInit(): void {

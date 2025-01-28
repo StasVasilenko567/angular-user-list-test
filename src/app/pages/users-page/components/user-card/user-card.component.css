@@ -1,9 +1,9 @@
-div {
+.user-card {
     border: 1px solid black;
     border-radius: 15px;
     padding: 10px;
     margin: 10px;
-    width: 200px;
+    width: 250px;
 
     display: flex;
     flex-direction: column;
@@ -12,4 +12,15 @@ div {
 
 button {
     width: 100%;
+}
+
+.user-card__selector {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+}
+
+.user-card__selector button {
+    width: 50%;
 }

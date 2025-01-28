@@ -38,7 +38,6 @@ interface EditDialogForm {
     MatDialogActions,
     ReactiveFormsModule,
     NgIf,
-    SelectorComponent
   ],
   templateUrl: './edit-dialog.component.html',
   styleUrl: './edit-dialog.component.css'
