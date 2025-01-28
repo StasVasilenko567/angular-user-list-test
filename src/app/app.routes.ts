@@ -1,10 +1,15 @@
 import { Routes } from '@angular/router';
-import { AppComponent } from './app.component';
+import { UsersPageComponent } from './pages/users-page/users-page.component';
+import { CalendarPageComponent } from './pages/calendar-page/calendar-page.component';
 
 export const routes: Routes = [
     {
         path: 'users',
-        component: AppComponent
+        component: UsersPageComponent
+    },
+    {
+        path: 'calendar',
+        component: CalendarPageComponent
     },
     {
         path: '**',

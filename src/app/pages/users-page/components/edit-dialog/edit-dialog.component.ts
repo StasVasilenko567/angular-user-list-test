@@ -11,8 +11,8 @@ import {
 } from '@angular/material/dialog';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
-import { SelectorComponent } from '@components/selector/selector.component';
-import { User, UserRole } from '@models/user.model';
+import { SelectorComponent } from 'app/pages/users-page/components/selector/selector.component';
+import { User, UserRole } from 'app/pages/users-page/models/user.model';
 
 interface EditDialogData {
   user?: User;

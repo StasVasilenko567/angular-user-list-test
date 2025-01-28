@@ -1,0 +1,6 @@
+<div class="calendar">
+    <span *ngFor="let day of daysOfWeek" class="calendar__day">{{ day }}</span>
+    <span *ngFor="let day of days" class="calendar__day {{ day | isToday: day.getDate() }}">
+        {{ day | date: 'dd' }}
+    </span>
+</div>

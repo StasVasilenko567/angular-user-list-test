@@ -1,4 +1,4 @@
-import { User } from "@models/user.model";
+import { User } from "app/pages/users-page/models/user.model";
 import { createFeature, createReducer, on } from "@ngrx/store";
 import { userActions } from "./user.actions";
 

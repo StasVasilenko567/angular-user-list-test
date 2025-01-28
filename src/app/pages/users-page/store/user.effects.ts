@@ -3,8 +3,8 @@ import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 import { userActions } from "./user.actions";
-import { User } from "@models/user.model";
-import { UserApiService } from "@services/userapi.service";
+import { User } from "app/pages/users-page/models/user.model";
+import { UserApiService } from "app/pages/users-page/services/userapi.service";
 
 @Injectable()
 export class UserEffects {

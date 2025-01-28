@@ -1,4 +1,4 @@
-import { User } from "@models/user.model";
+import { User } from "app/pages/users-page/models/user.model";
 import { emptyProps, props } from "@ngrx/store";
 
 import { createActionGroup } from "@ngrx/store";

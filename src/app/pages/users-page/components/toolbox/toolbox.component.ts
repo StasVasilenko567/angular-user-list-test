@@ -1,11 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { User, UserRole } from '@models/user.model';
-import { generateUID } from '@utils/UuidGenerator';
-import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
+import { User, UserRole } from 'app/pages/users-page/models/user.model';
+import { generateUID } from 'app/pages/users-page/utils/UuidGenerator';
+import { EditDialogComponent } from 'app/pages/users-page/components/edit-dialog/edit-dialog.component';
 import { MatDialog } from '@angular/material/dialog';
 import { Store } from '@ngrx/store';
-import { userActions } from 'app/store/user.actions';
+import { userActions } from 'app/pages/users-page/store/user.actions';
 
 @Component({
   selector: 'app-toolbox',

@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
-import { User } from "@models/user.model";
+import { User } from "app/pages/users-page/models/user.model";
 
 export const API_ENDPOINTS = {
     HOST: 'http://localhost:3000/',

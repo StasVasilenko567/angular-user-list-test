@@ -1,9 +1,9 @@
 import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { AsyncPipe, NgFor } from '@angular/common';
-import { UserCardComponent } from '@components/user-card/user-card.component';
-import { userActions } from 'app/store/user.actions';
+import { UserCardComponent } from 'app/pages/users-page/components/user-card/user-card.component';
+import { userActions } from 'app/pages/users-page/store/user.actions';
 import { Store } from '@ngrx/store';
-import { userSelectors } from 'app/store/user.selectors';
+import { userSelectors } from 'app/pages/users-page/store/user.selectors';
 import { Subscription } from 'rxjs';
 
 @Component({

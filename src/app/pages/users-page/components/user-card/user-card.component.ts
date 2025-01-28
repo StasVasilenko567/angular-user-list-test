@@ -1,9 +1,9 @@
 import { Component, inject, Input } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { EditDialogComponent } from '@components/edit-dialog/edit-dialog.component';
-import { User } from '@models/user.model';
+import { EditDialogComponent } from 'app/pages/users-page/components/edit-dialog/edit-dialog.component';
+import { User } from 'app/pages/users-page/models/user.model';
 import { Store } from '@ngrx/store';
-import { userActions } from 'app/store/user.actions';
+import { userActions } from 'app/pages/users-page/store/user.actions';
 
 @Component({
   selector: 'app-user-card',

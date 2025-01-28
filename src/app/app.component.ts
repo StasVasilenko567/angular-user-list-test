@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
-import { UserListComponent } from '@components/user-list/user-list.component';
-import { ToolboxComponent } from '@components/toolbox/toolbox.component';
+import { UserListComponent } from 'app/pages/users-page/components/user-list/user-list.component';
+import { ToolboxComponent } from 'app/pages/users-page/components/toolbox/toolbox.component';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [UserListComponent, ToolboxComponent],
+  imports: [RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
