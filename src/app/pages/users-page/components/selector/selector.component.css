@@ -3,8 +3,6 @@
     border-radius: 5px;
     padding: 5px;
     width: 100%;
-    /* margin: 10px; */
-    /* width: 250px; */
 }
 
 
@@ -26,7 +24,6 @@
 }
 
 .selector__options {
-    /* cursor: pointer; */
     display: flex;
     flex-direction: column;
     gap: 5px;
