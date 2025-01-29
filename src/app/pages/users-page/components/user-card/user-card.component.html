@@ -4,7 +4,11 @@
     <p><b>Email: </b>{{user?.email}}</p>
     <p><b>Phone: </b>{{user?.phone}}</p>
     <div class="user-card__selector">
-        <app-selector [items]="roles" [selected]="user?.role" (onUpdate)="onSelectionChange($event)" />
+        <app-selector 
+            [items]="roles" 
+            [selected]="user?.role" 
+            (onUpdate)="onSelectionChange($event)"
+        />
         <button [disabled]="!selectedRole || selectedRole === user?.role" (click)="onUpdatePressed()">Обновить</button>
     </div>
     <button (click)="openDialog()">Изменить</button>

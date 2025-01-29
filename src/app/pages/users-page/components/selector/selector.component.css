@@ -1,3 +1,52 @@
-select {
+.selector {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
     width: 100%;
+    /* margin: 10px; */
+    /* width: 250px; */
+}
+
+
+.selector__selected-text {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.selector__selected {
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    gap: 5px;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.selector__options {
+    /* cursor: pointer; */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+}
+
+.selector__option {
+    cursor: pointer;
+    padding: 5px;
+}
+
+.selector__option:hover {
+    background-color: blue;
+    color: white;
+}
+
+.checkmark {
+    color: red;
+}
+
+.checkmark__selected {
+    color: green;
 }

@@ -1,64 +1,65 @@
-import { NgFor } from '@angular/common';
-import { Component, EventEmitter, forwardRef, Input, OnInit, Output } from '@angular/core';
-import { AbstractControl, ControlValueAccessor, FormsModule, NG_VALIDATORS, NG_VALUE_ACCESSOR, ValidationErrors, Validator } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren, AfterViewInit, OnDestroy } from '@angular/core';
+import { Subject, takeUntil } from 'rxjs';
 @Component({
   standalone: true,
   selector: 'app-selector',
-  imports: [NgFor, FormsModule],
+  imports: [CommonModule],
   templateUrl: './selector.component.html',
   styleUrl: './selector.component.css',
-  providers: [
-    {
-      provide: NG_VALUE_ACCESSOR,
-      useExisting: forwardRef(() => SelectorComponent),
-      multi: true
-    },
-    {
-      provide: NG_VALIDATORS,
-      useExisting: SelectorComponent,
-      multi: true
-    }
-  ]
 })
-export class SelectorComponent implements ControlValueAccessor, OnInit, Validator {
+export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
+  public expanded: boolean = false;
+
   @Input() public items: {id: any, name: string}[] = [];
   @Input() public selected: any;
 
   @Output() public onUpdate: EventEmitter<any> = new EventEmitter<any>();
 
-  public firstSelected: any;
+  @ViewChildren('option') public options: QueryList<ElementRef>|undefined;
+
+  private destroy$: Subject<void> = new Subject<void>();
+  private firstSelected: any;
+
+  public getSelectedIndex(): number {
+    return this.items.findIndex(item => item.id === this.selected);
+  }
+
+  private getIndexById(id: any): number {
+    return this.items.findIndex(item => item.id === id);
+  }
+
+  public onOptionClick(item: {id: any, name: string}): void {
+    this.selected = item.id;
+    this.expanded = false;
+    this.onUpdate.emit(item.id);
+  }
+
+  // lifecycle hooks
   
-  public onTouched: () => void = () => {};
-  public onChange: (value: any) => void = (value: any) => {};
-
-  public onSelectionChange(event: any): void {
-    this.onTouched();
-    this.selected = event.target.value;
-    this.onChange(event.target.value);
-    this.onUpdate.emit(event.target.value);
-  }
-
   public ngOnInit(): void {
-    this.firstSelected = this.selected ? this.selected : null;
     this.selected = this.selected ? this.selected : this.items[0].id;
+    this.firstSelected = this.selected;
   }
 
-  public writeValue(value: any): void {
-    this.selected = value ? value : this.selected;
+  public ngAfterViewInit(): void {
+    let index: number = 0;
+    this.options?.changes.pipe(
+      takeUntil(this.destroy$)
+    ).subscribe((c) => { c.toArray().forEach((item: ElementRef) => { 
+      if (index === this.getIndexById(this.firstSelected)) {
+        item.nativeElement.classList.add('checkmark__selected');
+      } else {
+        item.nativeElement.classList.add('checkmark');
+      }
+      index++;
+    })
+    index = 0;
+  });
   }
 
-  public registerOnChange(fn: (value: any) => void): void {
-    this.onChange = fn;
-  }
-
-  public registerOnTouched(fn: () => void): void {
-    this.onTouched = fn;
-  }
-
-  public validate(control: AbstractControl): ValidationErrors | null {
-    if (this.selected === this.firstSelected) {
-      return {required: true};
-    }
-    return null;
+  public ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
   }
 }

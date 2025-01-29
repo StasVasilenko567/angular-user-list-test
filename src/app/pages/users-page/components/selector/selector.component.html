@@ -1,3 +1,16 @@
-<select (change)="onSelectionChange($event)">
-    <option *ngFor="let item of items" [value]="item.id" [selected]="item.id === selected">{{item.name}} {{item.id === firstSelected ? '✓' : ''}}</option>
-</select>
+<div class="selector">
+    <div class="selector__selected-text" (click)="expanded = !expanded">
+        {{items[getSelectedIndex()].name}} 
+        <span *ngIf="!expanded" class="chevron">▼</span> 
+        <span *ngIf="expanded" class="chevron">▲</span>
+    </div>
+    <div *ngIf="expanded" class="selector__options">
+        <div 
+            *ngFor="let item of items" 
+            class="selector__option" 
+            (click)="onOptionClick(item)"
+        >
+            {{item.name}} <span #option>✓</span>
+        </div>
+    </div>
+</div>
