@@ -36,7 +36,7 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
   }
 
   // lifecycle hooks
-  
+
   public ngOnInit(): void {
     this.selected = this.selected ? this.selected : this.items[0].id;
     this.firstSelected = this.selected;
@@ -44,6 +44,9 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
 
   public ngAfterViewInit(): void {
     let index: number = 0;
+    
+    // Забавная проблема: Поиск ViewChildren работает только на статических элементах, которые не сгенерированы через ngFor.
+    // Поэтому, я использую подписку на changes, чтобы найти элементы после их генерации.
     this.options?.changes.pipe(
       takeUntil(this.destroy$)
     ).subscribe((c) => { c.toArray().forEach((item: ElementRef) => { 
