@@ -7,7 +7,7 @@ import { ToolboxComponent } from './components/toolbox/toolbox.component';
   standalone: true,
   imports: [ToolboxComponent, UserListComponent],
   templateUrl: './users-page.component.html',
-  styleUrl: './users-page.component.css'
+  styleUrl: './users-page.component.css',
 })
 export class UsersPageComponent {
 

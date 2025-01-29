@@ -6,6 +6,7 @@ export const routes: Routes = [
     {
         path: 'users',
         component: UsersPageComponent
+        // loadChildren: () => import('./pages/users-page/user-page.module').then(m => m.UsersPageModule)
     },
     {
         path: 'calendar',
