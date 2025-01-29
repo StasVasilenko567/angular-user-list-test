@@ -9,24 +9,17 @@ import { Subject, takeUntil } from 'rxjs';
   styleUrl: './selector.component.css',
 })
 export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
-  public expanded: boolean = false;
 
+  public expanded: boolean = false;
   @Input() public items: {id: any, name: string}[] = [];
   @Input() public selected: any;
-
   @Output() public onUpdate: EventEmitter<any> = new EventEmitter<any>();
-
   @ViewChildren('option') public options: QueryList<ElementRef>|undefined;
-
   private destroy$: Subject<void> = new Subject<void>();
   private firstSelected: any;
 
   public getSelectedIndex(): number {
     return this.items.findIndex(item => item.id === this.selected);
-  }
-
-  private getIndexById(id: any): number {
-    return this.items.findIndex(item => item.id === id);
   }
 
   public onOptionClick(item: {id: any, name: string}): void {
@@ -35,8 +28,11 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
     this.onUpdate.emit(item.id);
   }
 
-  // lifecycle hooks
+  private getIndexById(id: any): number {
+    return this.items.findIndex(item => item.id === id);
+  }
 
+  // lifecycle hooks
   public ngOnInit(): void {
     this.selected = this.selected ? this.selected : this.items[0].id;
     this.firstSelected = this.selected;
@@ -44,7 +40,7 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
 
   public ngAfterViewInit(): void {
     let index: number = 0;
-    
+
     // Забавная проблема: Поиск ViewChildren работает только на статических элементах, которые не сгенерированы через ngFor.
     // Поэтому, я использую подписку на changes, чтобы найти элементы после их генерации.
     this.options?.changes.pipe(
