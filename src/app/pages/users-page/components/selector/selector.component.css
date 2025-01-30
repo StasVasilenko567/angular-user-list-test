@@ -3,6 +3,8 @@
     border-radius: 5px;
     padding: 5px;
     width: 100%;
+    position: relative;
+    min-width: 100px;
 }
 
 
@@ -24,15 +26,26 @@
 }
 
 .selector__options {
+    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 5px;
+    width: 100%;
+    min-width: 230px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    left: -2px;
+    top: 100%;
 }
 
 .selector__option {
     cursor: pointer;
     padding: 5px;
+    border-radius: 5px;
 }
 
 .selector__option:hover {
@@ -40,10 +53,16 @@
     color: white;
 }
 
+.dont-show {
+    display: none;
+}
+
 .checkmark {
+    display: inline-block;
     color: red;
 }
 
 .checkmark__selected {
+    display: inline-block;
     color: green;
 }

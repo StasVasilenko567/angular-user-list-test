@@ -11,12 +11,12 @@ import { Subject, takeUntil } from 'rxjs';
 export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
 
   public expanded: boolean = false;
+  public firstSelected: any;
   @Input() public items: {id: any, name: string}[] = [];
   @Input() public selected: any;
   @Output() public onUpdate: EventEmitter<any> = new EventEmitter<any>();
   @ViewChildren('option') public options: QueryList<ElementRef>|undefined;
   private destroy$: Subject<void> = new Subject<void>();
-  private firstSelected: any;
 
   public getSelectedIndex(): number {
     return this.items.findIndex(item => item.id === this.selected);
@@ -41,20 +41,20 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
   public ngAfterViewInit(): void {
     let index: number = 0;
 
-    // Забавная проблема: Поиск ViewChildren работает только на статических элементах, которые не сгенерированы через ngFor.
-    // Поэтому, я использую подписку на changes, чтобы найти элементы после их генерации.
     this.options?.changes.pipe(
       takeUntil(this.destroy$)
-    ).subscribe((c) => { c.toArray().forEach((item: ElementRef) => { 
-      if (index === this.getIndexById(this.firstSelected)) {
-        item.nativeElement.classList.add('checkmark__selected');
-      } else {
-        item.nativeElement.classList.add('checkmark');
-      }
-      index++;
-    })
-    index = 0;
-  });
+    ).subscribe((c) => { c.toArray().forEach(
+      (item: ElementRef) => { 
+        if (index === this.getIndexById(this.firstSelected)) {
+          item.nativeElement.classList.add('checkmark__selected');
+        }
+        if (index === this.getIndexById(this.selected)) {
+          item.nativeElement.classList.add('checkmark');
+        }
+        index++;
+      });
+      index = 0;
+    });
   }
 
   public ngOnDestroy(): void {

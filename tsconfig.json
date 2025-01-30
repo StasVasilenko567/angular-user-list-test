@@ -25,7 +25,7 @@
       "@services/*": ["app/services/*"],
       "@components/*": ["app/components/*"],
       "@models/*": ["app/models/*"],
-      "@utils/*": ["app/utils/*"],
+      "@utils/*": ["app/utils/*"]
     }
   },
   "angularCompilerOptions": {
