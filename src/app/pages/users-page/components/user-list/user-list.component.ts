@@ -5,10 +5,11 @@ import { userActions } from 'app/pages/users-page/store/user.actions';
 import { Store } from '@ngrx/store';
 import { userSelectors } from 'app/pages/users-page/store/user.selectors';
 import { Subscription } from 'rxjs';
+import { ToolboxComponent } from "../toolbox/toolbox.component";
 
 @Component({
   selector: 'app-user-list',
-  imports: [AsyncPipe, UserCardComponent, NgFor],
+  imports: [AsyncPipe, UserCardComponent, NgFor, ToolboxComponent, ToolboxComponent],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
 })

@@ -1,5 +1,4 @@
 import { CommonModule } from "@angular/common";
-import { UsersPageComponent } from "./users-page.component";
 import { NgModule } from "@angular/core";
 import { provideHttpClient } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
@@ -9,11 +8,12 @@ import { UserEffects } from "./store/user.effects";
 import { userFeature } from "./store/user.reducers";
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async";
 import { UserRoutingModule } from "./user-routes.module";
+import { UserListComponent } from "./components/user-list/user-list.component";
 
 @NgModule({
   imports: [
     CommonModule,
-    UsersPageComponent,
+    UserListComponent,
     StoreModule.forFeature(userFeatureKey, userFeature.reducer),
     EffectsModule.forFeature([UserEffects]),
     UserRoutingModule,
