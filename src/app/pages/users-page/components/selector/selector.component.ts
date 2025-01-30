@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren, AfterViewInit, OnDestroy } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, OnInit, Output, QueryList, ViewChildren, AfterViewInit, OnDestroy, ViewChild } from '@angular/core';
 import { Subject, takeUntil } from 'rxjs';
 @Component({
   standalone: true,
@@ -16,25 +16,11 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
   @Input() public selected: any;
   @Output() public onUpdate: EventEmitter<any> = new EventEmitter<any>();
   @ViewChildren('option') public options: QueryList<ElementRef>|undefined;
+  @ViewChild('checkmark') public checkmark: ElementRef|undefined;
   private destroy$: Subject<void> = new Subject<void>();
 
-  public getSelectedIndex(): number {
-    return this.items.findIndex(item => item.id === this.selected);
-  }
-
-  public onOptionClick(item: {id: any, name: string}): void {
-    this.selected = item.id;
-    this.expanded = false;
-    this.onUpdate.emit(item.id);
-  }
-
-  private getIndexById(id: any): number {
-    return this.items.findIndex(item => item.id === id);
-  }
-
-  // lifecycle hooks
   public ngOnInit(): void {
-    this.selected = this.selected ? this.selected : this.items[0].id;
+    this.selected = this.selected ?? this.items[0].id;
     this.firstSelected = this.selected;
   }
 
@@ -45,11 +31,8 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
       takeUntil(this.destroy$)
     ).subscribe((c) => { c.toArray().forEach(
       (item: ElementRef) => { 
-        if (index === this.getIndexById(this.firstSelected)) {
-          item.nativeElement.classList.add('checkmark__selected');
-        }
         if (index === this.getIndexById(this.selected)) {
-          item.nativeElement.classList.add('checkmark');
+          item.nativeElement.classList.add('checkmark__selected');
         }
         index++;
       });
@@ -60,5 +43,23 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
   public ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+  }
+  
+  public getSelectedIndex(): number {
+    return this.items.findIndex(item => item.id === this.selected);
+  }
+
+  public onOptionClick(item: {id: any, name: string}): void {
+    this.selected = item.id;
+    this.expanded = false;
+    this.onUpdate.emit(item.id);
+
+    if (this.selected !== this.firstSelected) {
+      this.checkmark?.nativeElement.classList.add('checkmark__selected');
+    }
+  }
+
+  private getIndexById(id: any): number {
+    return this.items.findIndex(item => item.id === id);
   }
 }

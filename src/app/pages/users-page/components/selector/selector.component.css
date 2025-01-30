@@ -57,11 +57,6 @@
     display: none;
 }
 
-.checkmark {
-    display: inline-block;
-    color: red;
-}
-
 .checkmark__selected {
     display: inline-block;
     color: green;
