@@ -10,6 +10,10 @@ export const routes: Routes = [
         loadChildren: () => import('./pages/calendar-page/calendar-page.module').then(m => m.CalendarPageModule)
     },
     {
+        path: 'todo',
+        loadChildren: () => import('./pages/todo-kanban/todo-routes.module').then(m => m.TodoRoutesModule)
+    },
+    {
         path: '**',
         redirectTo: '/users',
     }
