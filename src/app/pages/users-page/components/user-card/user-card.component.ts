@@ -18,7 +18,7 @@ export class UserCardComponent {
   
   @Input() user: User | undefined;
   
-  readonly dialog = inject(MatDialog);
+  private readonly dialog = inject(MatDialog);
   private readonly store = inject(Store);
 
   public roles = [

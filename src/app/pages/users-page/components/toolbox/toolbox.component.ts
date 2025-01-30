@@ -15,7 +15,7 @@ import { userActions } from 'app/pages/users-page/store/user.actions';
 })
 export class ToolboxComponent {
 
-  readonly dialog = inject(MatDialog);  
+  private readonly dialog = inject(MatDialog);  
   private readonly store = inject(Store);
 
   private addUser(inputValue: User) {
