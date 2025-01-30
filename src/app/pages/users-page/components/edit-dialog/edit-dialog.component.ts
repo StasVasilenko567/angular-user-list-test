@@ -1,6 +1,6 @@
 import { NgIf } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
-import { AbstractControl, FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Component, inject } from '@angular/core';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import {MatButtonModule} from '@angular/material/button';
 import {
   MAT_DIALOG_DATA,
@@ -52,12 +52,6 @@ export class EditDialogComponent {
     "phone": new FormControl(this.data.user?.phone, [Validators.required, Validators.pattern('[0-9]{10}')]),
     "role": new FormControl(this.data.user?.role || UserRole.USER, [Validators.required]),
   });
-
-  public roles = [
-    {id: UserRole.ADMIN, name: 'Админ'},
-    {id: UserRole.USER, name: 'Пользователь'},
-    {id: UserRole.BARABULKA, name: 'Барабулька'},
-  ];
 
   public cancel(): void {
     this.dialogRef.close();

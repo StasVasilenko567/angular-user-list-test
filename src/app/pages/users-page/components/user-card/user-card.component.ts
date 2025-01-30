@@ -55,7 +55,15 @@ export class UserCardComponent {
 
     dialogRef.afterClosed().subscribe((result: User | null) => {
       if (result) {
-        this.store.dispatch(userActions.updateUser({ id: this.user?.id as string, user: result }));
+        const tmpUser: User = {
+          id: this.user?.id as string,
+          name: result.name,
+          username: result.username,
+          email: result.email,
+          phone: result.phone,
+          role: this.user?.role as UserRole,
+        }
+        this.store.dispatch(userActions.updateUser({ id: this.user?.id as string, user: tmpUser }));
       }
     });
   }
