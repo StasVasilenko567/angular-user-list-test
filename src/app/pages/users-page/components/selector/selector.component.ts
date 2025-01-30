@@ -32,7 +32,7 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
     ).subscribe((c) => { c.toArray().forEach(
       (item: ElementRef) => { 
         if (index === this.getIndexById(this.selected)) {
-          item.nativeElement.classList.add('checkmark__selected');
+          item.nativeElement.classList.remove('dont-show');
         }
         index++;
       });
@@ -55,6 +55,8 @@ export class SelectorComponent implements AfterViewInit, OnDestroy, OnInit {
     this.onUpdate.emit(item.id);
 
     if (this.selected !== this.firstSelected) {
+      this.checkmark?.nativeElement.classList.remove('checkmark__selected');
+    } else {
       this.checkmark?.nativeElement.classList.add('checkmark__selected');
     }
   }

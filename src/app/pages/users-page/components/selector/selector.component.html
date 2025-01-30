@@ -1,6 +1,6 @@
 <div class="selector">
     <div class="selector__selected-text" (click)="expanded = !expanded">
-        {{items[getSelectedIndex()].name}} <span #checkmark>✓</span>
+        {{items[getSelectedIndex()].name}} <span class="checkmark__selected" #checkmark>✓</span>
         <span *ngIf="!expanded" class="chevron">▼</span> 
         <span *ngIf="expanded" class="chevron">▲</span>
     </div>
