@@ -2,16 +2,16 @@
     class="status-tower" 
     cdkDropList
     (cdkDropListDropped)="drop($event)"
-    id="{{filter}}"
+    id="{{status}}"
 >
     <div class="status-tower__header">
-        <h2>{{statusLabels[filter]}}</h2>
+        <h2>{{statusLabels[status]}}</h2>
         <button mat-icon-button (click)="openCreateTaskDialog()">
             <mat-icon>+</mat-icon>
         </button>
     </div>
     <div class="status-tower__tasks">
-        <ng-container *ngFor="let todo of todos$ | async">
+        <ng-container *ngFor="let todo of getTodosByStatus(status) | async">
             <app-todo-card [todo]="todo" />
         </ng-container>
     </div>

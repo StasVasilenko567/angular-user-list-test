@@ -8,11 +8,9 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialog } from "@angular/material/dialog";
 import { CreateTaskDialogComponent } from "../create-task-dialog/create-task-dialog.component";
-import { generateUID } from "app/pages/users-page/utils/UuidGenerator";
 import { todoActions } from "../../store/todo.actions";
 import { Store } from "@ngrx/store";
 import { CdkDragDrop, CdkDropList } from "@angular/cdk/drag-drop";
-import { OrderService } from "../../services/order.service";
 @Component({
     selector: 'app-status-tower',
     templateUrl: './status-tower.component.html',
@@ -28,8 +26,8 @@ import { OrderService } from "../../services/order.service";
     standalone: true,
 })
 export class StatusTowerComponent {
-    @Input() public filter!: Status;
-    @Input() public todos$: Observable<Todo[]>|undefined;
+    @Input() public status!: Status;
+    @Input() public todos$!: Observable<Todo[]>;
     @Input() public connectedTo: Status[]|undefined;
     public readonly dialog = inject(MatDialog);
     private readonly store = inject(Store);
@@ -45,7 +43,7 @@ export class StatusTowerComponent {
 
     public openCreateTaskDialog(): void {
         const dialogRef = this.dialog.open(CreateTaskDialogComponent, {
-            data: { filter: this.filter },
+            data: { status: this.status },
         });
 
         dialogRef.afterClosed().subscribe((result: Todo | null) => {
@@ -55,7 +53,7 @@ export class StatusTowerComponent {
                     id: Date.now().toString(),
                     title: result.title as string,
                     description: result.description as string,
-                    status: this.filter as Status,
+                    status: this.status,
                     createdAt: new Date().toISOString(),
                     order: 0,
                 }
@@ -67,5 +65,11 @@ export class StatusTowerComponent {
     public drop(event: CdkDragDrop<Todo>): void {
         this.store.dispatch(todoActions.updateTodo({ id: event.item.data.id, todo: { ...event.item.data, status: event.container.id as Status, order: event.currentIndex } }));
         // this.orderService.Order(event.item.data, event.currentIndex, event.previousContainer.id as Status, event.container.id as Status);
+    }
+
+    public getTodosByStatus(status: Status): Observable<Todo[]> {
+        return this.todos$.pipe(
+            map((todos) => todos.filter((todo) => todo.status === status).sort((a, b) => a.order - b.order))
+        );
     }
 }
