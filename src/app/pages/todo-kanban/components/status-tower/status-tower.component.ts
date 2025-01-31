@@ -52,7 +52,7 @@ export class StatusTowerComponent {
             if (result) {
                 console.log(result);
                 const tempTodo: Todo = {
-                    id: generateUID(),
+                    id: Date.now().toString(),
                     title: result.title as string,
                     description: result.description as string,
                     status: this.filter as Status,
