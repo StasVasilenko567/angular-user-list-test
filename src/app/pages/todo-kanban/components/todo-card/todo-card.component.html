@@ -1,4 +1,13 @@
-<div class="todo-card" cdkDrag>
-    <h3>{{ todo.title }}</h3>
-    <p>{{ todo.description }}</p>
+<div class="todo-card" cdkDrag [cdkDragData]="todo">
+    <div class="todo-card__header">
+        <div class="todo-card__header-order">
+            <p>#{{ todo.order }}</p>
+            <button mat-icon-button (click)="deleteTodo()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+        <h3 class="todo-card__header__title">{{ todo.title }}</h3>
+    </div>
+    <p class="todo-card__description">{{ todo.description }}</p>
+    <p class="todo-card__header__created-at">{{ todo.createdAt | date:'dd/MM/yyyy' }}</p>
 </div>

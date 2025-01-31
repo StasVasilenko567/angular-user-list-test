@@ -11,7 +11,7 @@ export const routes: Routes = [
     },
     {
         path: 'todo',
-        loadChildren: () => import('./pages/todo-kanban/todo-routes.module').then(m => m.TodoRoutesModule)
+        loadChildren: () => import('./pages/todo-kanban/todo.module').then(m => m.TodoKanbanModule)
     },
     {
         path: '**',

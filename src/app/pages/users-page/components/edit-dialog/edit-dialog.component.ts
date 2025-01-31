@@ -43,8 +43,8 @@ interface EditDialogForm {
   styleUrl: './edit-dialog.component.css'
 })
 export class EditDialogComponent {
-  readonly data = inject<EditDialogData>(MAT_DIALOG_DATA);
-  readonly dialogRef = inject(MatDialogRef<EditDialogComponent>);
+  public readonly data = inject<EditDialogData>(MAT_DIALOG_DATA);
+  public readonly dialogRef = inject(MatDialogRef<EditDialogComponent>);
   public form: FormGroup<EditDialogForm> = new FormGroup({
     "name": new FormControl(this.data.user?.name, [Validators.required]),
     "username": new FormControl(this.data.user?.username, [Validators.required, Validators.minLength(4), Validators.maxLength(20)]),

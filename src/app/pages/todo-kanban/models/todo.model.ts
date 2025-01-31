@@ -6,5 +6,5 @@ export type Todo = {
     description: string;
     status: Status;
     createdAt: string;
-    updatedAt: string;
+    order: number;
 }

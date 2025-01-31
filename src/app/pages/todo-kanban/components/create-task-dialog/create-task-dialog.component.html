@@ -1,0 +1,19 @@
+<h2 mat-dialog-title>Создание задачи</h2>
+<mat-dialog-content>
+    <form [formGroup]="form" novalidate>
+        <p *ngIf="form.controls.title.invalid && form.controls.title.touched">Введите название задачи!</p>
+        <mat-form-field>
+            <mat-label>Название задачи</mat-label>
+            <input matInput formControlName="title">
+        </mat-form-field>
+        <p *ngIf="form.controls.description.invalid && form.controls.description.touched">Введите описание задачи!</p>
+        <mat-form-field>
+            <mat-label>Описание задачи</mat-label>
+            <input matInput formControlName="description">
+        </mat-form-field>
+    </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button (click)="cancel()">Отмена</button>
+    <button [disabled]="form.invalid" mat-button (click)="submit()">Создать</button>
+</mat-dialog-actions>
