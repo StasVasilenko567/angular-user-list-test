@@ -4,7 +4,6 @@ import { Store } from "@ngrx/store";
 import { todoSelectors } from "../store/todo.selectors";
 import { todoActions } from "../store/todo.actions";
 import { Status } from "../models/status.model";
-import { forkJoin, map } from "rxjs";
 
 @Injectable()
 export class OrderService {
@@ -13,32 +12,42 @@ export class OrderService {
     public Order(insertedTodo: Todo, newOrder: number, from: Status, to: Status): void {
         const todos$ = this.store.select(todoSelectors.selectTodos);
 
-        this.store.dispatch(todoActions.updateTodo({ id: insertedTodo.id, todo: { ...insertedTodo, status: to, order: newOrder } }));
+        let fromTodos: Todo[] = [];
+        const fromSub = todos$.subscribe((todos: Todo[]) => fromTodos = todos.filter((todo) => todo.status === from).map((todo) => this.copyTodo(todo))); 
+        fromSub.unsubscribe();
 
-        const fromTodos = todos$.pipe(
-            map((todos) => todos.filter((todo) => todo.status === from).sort((a, b) => a.order - b.order)),
-            // map((todos) => [...todos.slice(0, newOrder), insertedTodo, ...todos.slice(newOrder)])
-        );
+        let toTodos: Todo[] = [];
+        const toSub = todos$.subscribe((todos: Todo[]) => toTodos = todos.filter((todo) => todo.status === to).map((todo) => this.copyTodo(todo)));
+        toSub.unsubscribe();
 
-        const toTodos = todos$.pipe(
-            map((todos) => todos.filter((todo) => todo.status === to).sort((a, b) => a.order - b.order)),
-            map((todos) => [...todos.slice(0, newOrder), insertedTodo, ...todos.slice(newOrder)])
-        );
+        if (from !== to) {
+            fromTodos.splice(fromTodos.indexOf(insertedTodo), 1);
+            toTodos.push(this.copyTodo(insertedTodo));
+        }
         
-        let order = 0;
-        fromTodos.subscribe((todos) => {
-            todos.forEach((todo) => {
-                this.store.dispatch(todoActions.updateTodo({ id: todo.id, todo: { ...todo, order } }));
-                order++;
-            });
-        }).unsubscribe();
+        toTodos.find((todo) => todo.id === insertedTodo.id)!.order = newOrder;
 
-        order = 0;
-        toTodos.subscribe((todos) => {
-            todos.forEach((todo) => {
-                this.store.dispatch(todoActions.updateTodo({ id: todo.id, todo: { ...todo, order } }));
-                order++;
-            });
-        }).unsubscribe();
+        fromTodos.map((todo, i) => { todo.order = i });
+
+        toTodos.map((todo, i) => {
+            if (todo.id !== insertedTodo.id) {
+                todo.order = i;
+            }
+        });
+
+        console.log(fromTodos);
+        console.log(toTodos);
+    }
+
+    private copyTodo(old: Todo): Todo {
+        let todo: Todo = {
+            id: old.id,
+            title: old.title,
+            description: old.description,
+            status: old.status,
+            createdAt: old.createdAt,
+            order: old.order,
+        }
+        return todo;
     }
 }

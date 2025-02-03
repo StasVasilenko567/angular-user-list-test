@@ -1,6 +1,6 @@
 import { inject, Injectable } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
-import { catchError, map, mergeMap, switchMap } from "rxjs/operators";
+import { catchError, map, switchMap } from "rxjs/operators";
 import { of } from "rxjs";
 import { todoActions } from "./todo.actions";
 import { TodoApiService } from "../services/todoapi.service";
@@ -40,6 +40,15 @@ export class TodoEffects {
         switchMap((action) => this.todoApiService.deleteTodo(action.id).pipe(
             map(() => todoActions.deleteTodoSuccess({ id: action.id })),
             catchError(() => of(todoActions.deleteTodoFailure()))
+        ))
+    ));
+
+    //
+    public updateTodos$ = createEffect(() => this.actions$.pipe(
+        ofType(todoActions.updateTodos),
+        switchMap((action) => this.todoApiService.updateTodos(action.todos).pipe(
+            map((todos: Todo[]) => todoActions.updateTodosSuccess({ todos })),
+            catchError(() => of(todoActions.updateTodosFailure()))
         ))
     ));
 }

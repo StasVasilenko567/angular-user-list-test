@@ -28,4 +28,8 @@ export class TodoApiService {
     deleteTodo(id: string) {
         return this.http.delete<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`);
     }
+
+    updateTodos(todos: Todo[]) {
+        return this.http.put<Todo[]>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}`, todos);
+    }
 }

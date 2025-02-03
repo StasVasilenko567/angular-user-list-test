@@ -37,7 +37,7 @@ export const todoFeature = createFeature({
             (state, action) => ({ 
                 ...state, 
                 isLoading: false,
-                data: { todos: action.todos },
+                data: { todos: action.todos.slice().sort((a, b) => a.order - b.order) },
             })
         ),
         on(
@@ -61,7 +61,7 @@ export const todoFeature = createFeature({
             (state, action) => ({ 
                 ...state, 
                 isLoading: false, 
-                data: { todos: [...state.data.todos, action.todo] },
+                data: { todos: [...state.data.todos, action.todo].sort((a, b) => a.order - b.order) },
             })
         ),
         on(
@@ -85,7 +85,7 @@ export const todoFeature = createFeature({
             (state, action) => ({ 
                 ...state, 
                 isLoading: false, 
-                data: { todos: state.data.todos.map(todo => todo.id === action.todo.id ? action.todo : todo) },
+                data: { todos: state.data.todos.map(todo => todo.id === action.todo.id ? action.todo : todo).sort((a, b) => a.order - b.order) },
             })
         ),
         on(
@@ -109,7 +109,7 @@ export const todoFeature = createFeature({
             (state, action) => ({ 
                 ...state, 
                 isLoading: false, 
-                data: { todos: state.data.todos.filter(todo => todo.id !== action.id) },
+                data: { todos: state.data.todos.filter(todo => todo.id !== action.id).sort((a, b) => a.order - b.order) },
             })
         ),
         on(
@@ -120,5 +120,30 @@ export const todoFeature = createFeature({
                 isError: true,
             })
         ),
+
+        on(
+            todoActions.updateTodos,
+            (state, action) => ({
+                ...state,
+                isLoading: true,
+                isError: false,
+            })
+        ),
+        on(
+            todoActions.updateTodosSuccess,
+            (state, action) => ({
+                ...state,
+                isLoading: false,
+                data: { todos: action.todos.sort((a, b) => a.order - b.order) },
+            })
+        ),
+        on(
+            todoActions.updateTodosFailure,
+            (state) => ({
+                ...state,
+                isLoading: false,
+                isError: true,
+            })
+        )
     ),
 });

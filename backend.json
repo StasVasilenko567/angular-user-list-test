@@ -1,86 +1,70 @@
 {
-    "users": [
-      {
-        "id": "jjtf2a",
-        "name": "f3ff",
-        "role": "user",
-        "username": "f3f343",
-        "email": "f3w@f",
-        "phone": "2385472385"
-      },
-      {
-        "id": "ij70tn",
-        "name": "dwww",
-        "role": "user",
-        "username": "grerr",
-        "email": "fwe@fw",
-        "phone": "3424233333"
-      },
-      {
-        "id": "9u73yp",
-        "name": "dqw",
-        "username": "wwwwdw",
-        "email": "wqd@fdd",
-        "phone": "1221222222",
-        "role": "admin"
-      },
-      {
-        "id": "en5pr7",
-        "name": "Vazgen",
-        "role": "barabulka",
-        "username": "Vazge",
-        "email": "V@b",
-        "phone": "2132221111"
-      },
-      {
-        "id": "vl49t5",
-        "name": "rh",
-        "role": "admin",
-        "username": "hhhh",
-        "email": "t@f",
-        "phone": "3122222222"
-      },
-      {
-        "id": "x24vtp",
-        "name": "Барабулька",
-        "role": "barabulka",
-        "username": "Барабулька",
-        "email": "Barabulka@fish.net",
-        "phone": "8005553535"
-      },
-      {
-        "id": "xyoii2",
-        "name": "Щавель",
-        "role": "admin",
-        "username": "shavel",
-        "email": "shavel@gmail.org",
-        "phone": "8005553535"
-      },
-      {
-        "id": "xmx5e1",
-        "name": "икп",
-        "role": "user",
-        "username": "иииии",
-        "email": "dd@f",
-        "phone": "5234856534"
-      }
-    ],
-    "todos": [
-      {
-        "id": "1738327769237",
-        "title": "r23",
-        "description": "rrr",
-        "status": "new",
-        "createdAt": "2025-01-31T12:49:29.237Z",
-        "order": 0
-      },
-      {
-        "id": "1738327778939",
-        "title": "fwe",
-        "description": "few",
-        "status": "new",
-        "createdAt": "2025-01-31T12:49:38.939Z",
-        "order": 1
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": "jjtf2a",
+      "name": "f3ff",
+      "role": "user",
+      "username": "f3f343",
+      "email": "f3w@f",
+      "phone": "2385472385"
+    },
+    {
+      "id": "ij70tn",
+      "name": "dwww",
+      "role": "user",
+      "username": "grerr",
+      "email": "fwe@fw",
+      "phone": "3424233333"
+    },
+    {
+      "id": "9u73yp",
+      "name": "dqw",
+      "role": "user",
+      "username": "wwwwdw",
+      "email": "wqd@fdd",
+      "phone": "1221222222"
+    },
+    {
+      "id": "en5pr7",
+      "name": "Vazgen",
+      "role": "barabulka",
+      "username": "Vazge",
+      "email": "V@b",
+      "phone": "2132221111"
+    },
+    {
+      "id": "vl49t5",
+      "name": "rh",
+      "role": "admin",
+      "username": "hhhh",
+      "email": "t@f",
+      "phone": "3122222222"
+    },
+    {
+      "id": "x24vtp",
+      "name": "Барабулька",
+      "role": "barabulka",
+      "username": "Барабулька",
+      "email": "Barabulka@fish.net",
+      "phone": "8005553535"
+    }
+  ],
+  "todos": [
+    {
+      "id": "1738583615024",
+      "title": "fifa",
+      "description": "fifa",
+      "status": "new",
+      "createdAt": "2025-02-03T11:53:35.024Z",
+      "order": 0
+    },
+    {
+      "id": "1738583621933",
+      "title": "buter",
+      "description": "buter",
+      "status": "new",
+      "createdAt": "2025-02-03T11:53:41.933Z",
+      "order": 0
+    }
+  ]
+}
