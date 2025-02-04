@@ -42,13 +42,4 @@ export class TodoEffects {
             catchError(() => of(todoActions.deleteTodoFailure()))
         ))
     ));
-
-    //
-    public updateTodos$ = createEffect(() => this.actions$.pipe(
-        ofType(todoActions.updateTodos),
-        switchMap((action) => this.todoApiService.updateTodos(action.todos).pipe(
-            map((todos: Todo[]) => todoActions.updateTodosSuccess({ todos })),
-            catchError(() => of(todoActions.updateTodosFailure()))
-        ))
-    ));
 }

@@ -49,16 +49,17 @@ export class StatusTowerComponent {
 
         dialogRef.afterClosed().subscribe((result: Todo | null) => {
             if (result) {
-                console.log(result);
                 const tempTodo: Todo = {
                     id: Date.now().toString(),
                     title: result.title as string,
                     description: result.description as string,
                     status: this.status,
                     createdAt: new Date().toISOString(),
-                    order: 0,
+                    order: -1,
                 }
-                this.store.dispatch(todoActions.createTodo({ todo: tempTodo }));
+                this.orderService.createTodo(tempTodo, this.status);
+                // this.store.dispatch(todoActions.createTodo({ todo: tempTodo }));
+
             }
         });
     }
@@ -72,6 +73,6 @@ export class StatusTowerComponent {
         //         order: event.currentIndex 
         //     } 
         // }));
-        this.orderService.Order(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
+        this.orderService.order(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
     }
 }

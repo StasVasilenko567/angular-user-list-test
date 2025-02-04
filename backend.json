@@ -51,20 +51,28 @@
   ],
   "todos": [
     {
-      "id": "1738583615024",
-      "title": "fifa",
-      "description": "fifa",
-      "status": "new",
-      "createdAt": "2025-02-03T11:53:35.024Z",
-      "order": 0
+      "id": "1738662927597",
+      "title": "Oleg",
+      "description": "Oleg",
+      "status": "done",
+      "createdAt": "2025-02-04T09:55:27.597Z",
+      "order": 1
     },
     {
-      "id": "1738583621933",
-      "title": "buter",
-      "description": "buter",
-      "status": "new",
-      "createdAt": "2025-02-03T11:53:41.933Z",
-      "order": 0
+      "id": "1738662934003",
+      "title": "Slav",
+      "description": "Slav",
+      "status": "ready",
+      "createdAt": "2025-02-04T09:55:34.003Z",
+      "order": 1
+    },
+    {
+      "id": "1738662942187",
+      "title": "NO",
+      "description": "NO",
+      "status": "ready_for_test",
+      "createdAt": "2025-02-04T09:55:42.187Z",
+      "order": 1
     }
   ]
 }

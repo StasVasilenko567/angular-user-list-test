@@ -22,14 +22,10 @@ export class TodoApiService {
     }
 
     updateTodo(id: string, todo: Todo) {
-        return this.http.put<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`, todo);
+        return this.http.patch<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`, todo);
     }
 
     deleteTodo(id: string) {
         return this.http.delete<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`);
-    }
-
-    updateTodos(todos: Todo[]) {
-        return this.http.put<Todo[]>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}`, todos);
     }
 }

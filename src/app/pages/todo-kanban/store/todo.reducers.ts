@@ -120,30 +120,5 @@ export const todoFeature = createFeature({
                 isError: true,
             })
         ),
-
-        on(
-            todoActions.updateTodos,
-            (state, action) => ({
-                ...state,
-                isLoading: true,
-                isError: false,
-            })
-        ),
-        on(
-            todoActions.updateTodosSuccess,
-            (state, action) => ({
-                ...state,
-                isLoading: false,
-                data: { todos: action.todos.sort((a, b) => a.order - b.order) },
-            })
-        ),
-        on(
-            todoActions.updateTodosFailure,
-            (state) => ({
-                ...state,
-                isLoading: false,
-                isError: true,
-            })
-        )
     ),
 });
