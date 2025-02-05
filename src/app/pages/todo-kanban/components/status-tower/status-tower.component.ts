@@ -8,10 +8,10 @@ import { MatButtonModule } from "@angular/material/button";
 import { MatIconModule } from "@angular/material/icon";
 import { MatDialog } from "@angular/material/dialog";
 import { CreateTaskDialogComponent } from "../create-task-dialog/create-task-dialog.component";
-import { todoActions } from "../../store/todo.actions";
 import { Store } from "@ngrx/store";
 import { CdkDragDrop, CdkDropList } from "@angular/cdk/drag-drop";
 import { OrderService } from "../../services/order.service";
+
 @Component({
     selector: 'app-status-tower',
     templateUrl: './status-tower.component.html',
@@ -57,22 +57,12 @@ export class StatusTowerComponent {
                     createdAt: new Date().toISOString(),
                     order: -1,
                 }
-                this.orderService.createTodo(tempTodo, this.status);
-                // this.store.dispatch(todoActions.createTodo({ todo: tempTodo }));
-
+                this.orderService.createCard(tempTodo, this.status);
             }
         });
     }
 
     public drop(event: CdkDragDrop<Status>): void {
-        // this.store.dispatch(todoActions.updateTodo({ 
-        //     id: event.item.data.id, 
-        //     todo: { 
-        //         ...event.item.data, 
-        //         status: event.container.data as Status, 
-        //         order: event.currentIndex 
-        //     } 
-        // }));
-        this.orderService.order(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
+        this.orderService.moveCard(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
     }
 }

@@ -5,7 +5,7 @@ import { todoSelectors } from "../store/todo.selectors";
 import { todoActions } from "../store/todo.actions";
 import { Status } from "../models/status.model";
 
-@Injectable()
+@Injectable({ providedIn: "root" })
 export class OrderService {
     private readonly store = inject(Store);
 
@@ -16,60 +16,56 @@ export class OrderService {
         this.todos$.subscribe((todos: Todo[]) => this.allTodos = todos);
     }
 
-    public order(insertedTodo: Todo, newOrder: number, from: Status, to: Status): void {
-        const toTodos: Todo[] = this.allTodos.filter((todo) => todo.status === to).map((todo) => this.copyTodo(todo));
+    public moveCard(insertedCard: Todo, position: number, fromStatusCategory: Status, toStatusCategory: Status): void {
+        let filteredTodo: Todo[] = this.allTodos.filter((todo) => todo.status === toStatusCategory).map((todo) => this.copyTodo(todo));
 
-        if (from === to) {
-            toTodos.splice(toTodos.indexOf(insertedTodo), 1);
+        if (fromStatusCategory !== toStatusCategory) {
+            filteredTodo.splice(position, 0, insertedCard);
         }
 
-        const tempTodo = this.copyTodo(insertedTodo);
+        const tempTodo = this.copyTodo(insertedCard);
 
-        if (toTodos.length > 0) {
-            if (newOrder === 0) {
-                tempTodo.order = toTodos[0].order - 1;
-            } else if(newOrder-1 === toTodos.length-1) {
-                tempTodo.order = toTodos[toTodos.length-1].order + 1;
-                console.log("fff");
+        if (filteredTodo.length > 1) {
+            if (position === 0) {
+                tempTodo.order = filteredTodo[fromStatusCategory === toStatusCategory ? 0 : 1].order - 1;
+            } else if(position === filteredTodo.length-1) {
+                tempTodo.order = filteredTodo[filteredTodo.length - (fromStatusCategory !== toStatusCategory ? 2 : 1)].order + 1;
             } else {
-                console.log("ABOBA");
-                tempTodo.order = toTodos[newOrder-1].order + 1;
+                tempTodo.order = filteredTodo[position-1].order + 1;
             }
         } else {
             tempTodo.order = 1;
         }
-        
-        tempTodo.status = to;
+        const curIndex = filteredTodo.findIndex((todo) => todo.id === tempTodo.id);
+        tempTodo.status = toStatusCategory;
+        filteredTodo[curIndex] = tempTodo;
+        filteredTodo = filteredTodo.sort((a, b) => a.order - b.order);
         this.store.dispatch(todoActions.updateTodo({id: tempTodo.id, todo: tempTodo}));
-        if (toTodos[newOrder] && toTodos[newOrder].order <= tempTodo.order) {
-            console.log("ok");
-            for (let i = newOrder; i < toTodos.length; i++) {
-                toTodos[i].order = toTodos[i].order + 1;
-                this.store.dispatch(todoActions.updateTodo({id: toTodos[i].id, todo: toTodos[i]}));
-            }
-        }
+
+        // this.recursiveOrder(position, filteredTodo, tempTodo.order);
     }
 
-    public createTodo(todo: Todo, status: Status): void {
+    public createCard(todo: Todo, status: Status): void {
         const todoList = this.allTodos.filter((todo) => todo.status === status);
         let newOrder: number;
         if (todoList.length !== 0) {
-            newOrder = todoList.length + 1;
+            newOrder = todoList[todoList.length-1].order + 1;
         } else {
             newOrder = 1;
         }
         this.store.dispatch(todoActions.createTodo({ todo: { ...todo, order: newOrder } }));
     }
 
-    private copyTodo(old: Todo): Todo {
-        let todo: Todo = {
-            id: old.id,
-            title: old.title,
-            description: old.description,
-            status: old.status,
-            createdAt: old.createdAt,
-            order: old.order,
+    private recursiveOrder(currentIndex: number, todoList: Todo[], cardOrder: number): void {
+        if (todoList[currentIndex] && todoList[currentIndex].order <= cardOrder) {
+            todoList[currentIndex] = {...todoList[currentIndex], order: cardOrder + 1};
+            this.store.dispatch(todoActions.updateTodo({id: todoList[currentIndex].id, todo: todoList[currentIndex]}));
+
+            this.recursiveOrder(currentIndex+1, todoList, todoList[currentIndex-1]?.order);
         }
-        return todo;
+    }
+
+    private copyTodo(old: Todo): Todo {
+        return { ...old };
     }
 }
