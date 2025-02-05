@@ -54,17 +54,17 @@
       "id": "1738662927597",
       "title": "Oleg",
       "description": "Oleg",
-      "status": "done",
+      "status": "ready_for_test",
       "createdAt": "2025-02-04T09:55:27.597Z",
-      "order": 1
+      "order": 2
     },
     {
       "id": "1738662934003",
       "title": "Slav",
       "description": "Slav",
-      "status": "ready",
+      "status": "ready_for_test",
       "createdAt": "2025-02-04T09:55:34.003Z",
-      "order": 1
+      "order": 3
     },
     {
       "id": "1738662942187",
