@@ -20,9 +20,11 @@ export class OrderService {
         let filteredTodo: Todo[] = this.allTodos.filter((todo) => todo.status === toStatusCategory).map((todo) => this.copyTodo(todo));
 
         if (fromStatusCategory !== toStatusCategory) {
-            filteredTodo.splice(position, 0, insertedCard);
+            // filteredTodo.splice(position, 0, insertedCard);
+            filteredTodo.push(insertedCard);
         }
 
+        const oldIndex = filteredTodo.findIndex((todo) => todo.id === insertedCard.id);
         const tempTodo = this.copyTodo(insertedCard);
 
         if (filteredTodo.length > 1) {
@@ -31,7 +33,7 @@ export class OrderService {
             } else if(position === filteredTodo.length-1) {
                 tempTodo.order = filteredTodo[filteredTodo.length - (fromStatusCategory !== toStatusCategory ? 2 : 1)].order + 1;
             } else {
-                tempTodo.order = filteredTodo[position-1].order + 1;
+                tempTodo.order = filteredTodo[position - (fromStatusCategory !== toStatusCategory ? 1 : 0)].order + 1;
             }
         } else {
             tempTodo.order = 1;
@@ -39,10 +41,16 @@ export class OrderService {
         const curIndex = filteredTodo.findIndex((todo) => todo.id === tempTodo.id);
         tempTodo.status = toStatusCategory;
         filteredTodo[curIndex] = tempTodo;
-        filteredTodo = filteredTodo.sort((a, b) => a.order - b.order);
+
+        this.moveArrayElement(filteredTodo, oldIndex, position);
         this.store.dispatch(todoActions.updateTodo({id: tempTodo.id, todo: tempTodo}));
 
-        // this.recursiveOrder(position, filteredTodo, tempTodo.order);
+        for (let i = 0; i < filteredTodo.length; i++) {
+            if (filteredTodo[i+1] && filteredTodo[i+1].order <= filteredTodo[i].order) {
+                filteredTodo[i+1] = {...filteredTodo[i+1], order: filteredTodo[i].order + 1};
+                this.store.dispatch(todoActions.updateTodo({id: filteredTodo[i+1].id, todo: filteredTodo[i+1]}));
+            }
+        }
     }
 
     public createCard(todo: Todo, status: Status): void {
@@ -56,16 +64,14 @@ export class OrderService {
         this.store.dispatch(todoActions.createTodo({ todo: { ...todo, order: newOrder } }));
     }
 
-    private recursiveOrder(currentIndex: number, todoList: Todo[], cardOrder: number): void {
-        if (todoList[currentIndex] && todoList[currentIndex].order <= cardOrder) {
-            todoList[currentIndex] = {...todoList[currentIndex], order: cardOrder + 1};
-            this.store.dispatch(todoActions.updateTodo({id: todoList[currentIndex].id, todo: todoList[currentIndex]}));
-
-            this.recursiveOrder(currentIndex+1, todoList, todoList[currentIndex-1]?.order);
-        }
-    }
-
     private copyTodo(old: Todo): Todo {
         return { ...old };
+    }
+
+    private moveArrayElement(input: Todo[], from: number, to: number) {
+        let numberOfDeletedElm = 1;
+        const elm = input.splice(from, numberOfDeletedElm)[0];
+        numberOfDeletedElm = 0;
+        input.splice(to, numberOfDeletedElm, elm);
     }
 }

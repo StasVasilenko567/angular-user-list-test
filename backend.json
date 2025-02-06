@@ -62,17 +62,17 @@
       "id": "1738662942187",
       "title": "NO",
       "description": "NO",
-      "status": "new",
+      "status": "ready_for_test",
       "createdAt": "2025-02-04T09:55:42.187Z",
-      "order": 1
+      "order": 2
     },
     {
       "id": "1738743879574",
       "title": "efw",
       "description": "gqre",
-      "status": "ready_for_test",
+      "status": "ready",
       "createdAt": "2025-02-05T08:24:39.574Z",
-      "order": 1
+      "order": 2
     },
     {
       "id": "1738752900356",
@@ -80,7 +80,7 @@
       "description": "ge",
       "status": "archived",
       "createdAt": "2025-02-05T10:55:00.356Z",
-      "order": 1
+      "order": 2
     }
   ]
 }

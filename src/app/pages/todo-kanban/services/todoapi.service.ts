@@ -1,6 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Todo } from "../models/todo.model";
+import { Observable } from "rxjs";
+import { TodoRepository } from "../interfaces/todo-repository.interface";
 
 const API_ENDPOINTS = {
     HOST: 'http://localhost:3000',
@@ -10,22 +12,22 @@ const API_ENDPOINTS = {
 @Injectable({
     providedIn: 'root'
 })
-export class TodoApiService {
+export class TodoApiService implements TodoRepository {
     private readonly http = inject(HttpClient);
 
-    getTodos() {
+    public getTodos(): Observable<Todo[]> {
         return this.http.get<Todo[]>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}`);
     }
 
-    createTodo(todo: Todo) {
+    public createTodo(todo: Todo): Observable<Todo> {
         return this.http.post<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}`, todo);
     }
 
-    updateTodo(id: string, todo: Todo) {
+    public updateTodo(id: string, todo: Todo): Observable<Todo> {
         return this.http.patch<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`, todo);
     }
 
-    deleteTodo(id: string) {
+    public deleteTodo(id: string): Observable<Todo> {
         return this.http.delete<Todo>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.TODOS}/${id}`);
     }
 }
