@@ -8,7 +8,6 @@ import { todoFeature } from "./store/todo.reducers";
 import { TodoRoutesModule } from "./todo-routes.module";
 import { OrderService } from "./services/order.service";
 import { HTTP_INTERCEPTORS, HttpClientJsonpModule, provideHttpClient, withInterceptors } from "@angular/common/http";
-import { ApiErrorInterceptor } from "./services/api-errhandler.service";
 // import { ApiErrorHandlerService } from "./services/api-errhandler.service";
 
 @NgModule({

@@ -7,9 +7,7 @@ import { Status } from "../../models/status.model";
 import { CommonModule } from "@angular/common";
 import { CdkDropListGroup } from "@angular/cdk/drag-drop";
 import { Subscription } from "rxjs";
-import { apiError$ } from "../../services/api-errhandler.service";
 import { MatDialog } from "@angular/material/dialog";
-import { ErrorDialogComponent } from "../error-dialog/error-dialog.component";
 
 @Component({
     selector: 'app-todo-page',
@@ -26,25 +24,25 @@ export class TodoKanbanComponent implements OnInit, OnDestroy {
     public statuses = Object.values(Status);
     public todos$ = this.store.select(todoSelectors.selectTodos);
 
-    private errorSubscription: Subscription | undefined;
+    // private errorSubscription: Subscription | undefined;
 
     public ngOnInit() {
         this.store.dispatch(todoActions.loadTodos());
 
-        this.errorSubscription = apiError$.subscribe((error) => {
-            if (error !== "") {
-                this.openErrorDialog(error);
-            }
-        });
+        // this.errorSubscription = apiError$.subscribe((error) => {
+        //     if (error !== "") {
+        //         this.openErrorDialog(error);
+        //     }
+        // });
     }
 
     public ngOnDestroy(): void {
-        this.errorSubscription?.unsubscribe();
+        // this.errorSubscription?.unsubscribe();
     }
 
-    private openErrorDialog(mess: string): void {
-        const dialogRef = this.dialog.open(ErrorDialogComponent, {
-            data: { message: mess },
-        });
-    }
+    // private openErrorDialog(mess: string): void {
+    //     const dialogRef = this.dialog.open(ErrorDialogComponent, {
+    //         data: { message: mess },
+    //     });
+    // }
 }

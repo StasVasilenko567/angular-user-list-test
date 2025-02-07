@@ -54,7 +54,7 @@
       "id": "1738662934003",
       "title": "Slav",
       "description": "Slav",
-      "status": "ready",
+      "status": "done",
       "createdAt": "2025-02-04T09:55:34.003Z",
       "order": 1
     },
@@ -62,9 +62,9 @@
       "id": "1738662942187",
       "title": "NO",
       "description": "NO",
-      "status": "ready",
+      "status": "ready_for_test",
       "createdAt": "2025-02-04T09:55:42.187Z",
-      "order": 0
+      "order": 1
     },
     {
       "id": "1738743879574",
@@ -80,7 +80,7 @@
       "description": "ge",
       "status": "ready",
       "createdAt": "2025-02-05T10:55:00.356Z",
-      "order": 2
+      "order": 0
     },
     {
       "id": "1738918730698",

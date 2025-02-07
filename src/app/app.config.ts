@@ -4,9 +4,9 @@ import { routes } from './app.routes';
 import { provideHttpClient, withInterceptors } from '@angular/common/http';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideStore, StoreModule } from '@ngrx/store';
-import { EffectsModule, provideEffects } from '@ngrx/effects';
+import { EffectsModule } from '@ngrx/effects';
 import { provideStoreDevtools } from '@ngrx/store-devtools';
-import { ApiErrorInterceptor } from './pages/todo-kanban/services/api-errhandler.service';
+import { ApiErrorInterceptorFunc } from './shared/interceptors/api-err.interceptor';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -15,7 +15,7 @@ export const appConfig: ApplicationConfig = {
     provideAnimationsAsync(),
     provideHttpClient(
       withInterceptors([
-        ApiErrorInterceptor
+        ApiErrorInterceptorFunc
       ])
     ),
     provideStore(),
