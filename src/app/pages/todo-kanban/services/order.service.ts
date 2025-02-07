@@ -55,7 +55,7 @@ export class OrderService {
         }
     }
 
-    public createCard(todoRep: TodoRepository, todo: Todo): Observable<Todo> {
+    public createCard(apiService: TodoRepository, todo: Todo): Observable<Todo> {
         const todoList = this.allTodos.filter((todoInFilter) => todoInFilter.status === todo.status);
         let newOrder: number;
         if (todoList.length !== 0) {
@@ -64,7 +64,7 @@ export class OrderService {
             newOrder = 1;
         }
         // this.store.dispatch(todoActions.createTodo({ todo: { ...todo, order: newOrder } }));
-        return todoRep.createTodo({ ...todo, order: newOrder });
+        return apiService.createTodo({ ...todo, order: newOrder });
     }
 
     private copyTodo(old: Todo): Todo {
