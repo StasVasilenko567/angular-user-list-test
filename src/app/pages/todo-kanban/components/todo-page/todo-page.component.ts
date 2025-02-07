@@ -33,7 +33,7 @@ export class TodoKanbanComponent implements OnInit, OnDestroy {
 
         this.errorSubscription = apiError$.subscribe((error) => {
             if (error !== "") {
-                this.openCreateTaskDialog(error);
+                this.openErrorDialog(error);
             }
         });
     }
@@ -42,7 +42,7 @@ export class TodoKanbanComponent implements OnInit, OnDestroy {
         this.errorSubscription?.unsubscribe();
     }
 
-    private openCreateTaskDialog(mess: string): void {
+    private openErrorDialog(mess: string): void {
         const dialogRef = this.dialog.open(ErrorDialogComponent, {
             data: { message: mess },
         });
