@@ -81,6 +81,14 @@ export const todoFeature = createFeature({
             })
         ),
         on(
+            todoActions.updateTodoWithOrder,
+            (state, action) => ({
+                ...state,
+                isLoading: true,
+                isError: false
+            })
+        ),
+        on(
             todoActions.updateTodoSuccess,
             (state, action) => ({ 
                 ...state, 

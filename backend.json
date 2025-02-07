@@ -54,7 +54,7 @@
       "id": "1738662934003",
       "title": "Slav",
       "description": "Slav",
-      "status": "done",
+      "status": "ready",
       "createdAt": "2025-02-04T09:55:34.003Z",
       "order": 1
     },
@@ -62,25 +62,33 @@
       "id": "1738662942187",
       "title": "NO",
       "description": "NO",
-      "status": "ready_for_test",
+      "status": "ready",
       "createdAt": "2025-02-04T09:55:42.187Z",
-      "order": 2
+      "order": 0
     },
     {
       "id": "1738743879574",
       "title": "efw",
       "description": "gqre",
-      "status": "ready",
+      "status": "new",
       "createdAt": "2025-02-05T08:24:39.574Z",
-      "order": 2
+      "order": 1
     },
     {
       "id": "1738752900356",
       "title": "ger",
       "description": "ge",
-      "status": "archived",
+      "status": "ready",
       "createdAt": "2025-02-05T10:55:00.356Z",
       "order": 2
+    },
+    {
+      "id": "1738918730698",
+      "title": "dwq",
+      "description": "dw",
+      "status": "ready",
+      "createdAt": "2025-02-07T08:58:50.698Z",
+      "order": -1
     }
   ]
 }

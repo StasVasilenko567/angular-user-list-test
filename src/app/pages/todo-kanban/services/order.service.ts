@@ -4,6 +4,8 @@ import { Store } from "@ngrx/store";
 import { todoSelectors } from "../store/todo.selectors";
 import { todoActions } from "../store/todo.actions";
 import { Status } from "../models/status.model";
+import { Observable } from "rxjs";
+import { TodoRepository } from "../interfaces/todo-repository.interface";
 
 @Injectable({ providedIn: "root" })
 export class OrderService {
@@ -16,7 +18,7 @@ export class OrderService {
         this.todos$.subscribe((todos: Todo[]) => this.allTodos = todos);
     }
 
-    public moveCard(insertedCard: Todo, position: number, fromStatusCategory: Status, toStatusCategory: Status): void {
+    public moveCard(insertedCard: Todo, position: number, fromStatusCategory: Status, toStatusCategory: Status) {
         let filteredTodo: Todo[] = this.allTodos.filter((todo) => todo.status === toStatusCategory).map((todo) => this.copyTodo(todo));
 
         if (fromStatusCategory !== toStatusCategory) {
@@ -53,15 +55,16 @@ export class OrderService {
         }
     }
 
-    public createCard(todo: Todo, status: Status): void {
-        const todoList = this.allTodos.filter((todo) => todo.status === status);
+    public createCard(todoRep: TodoRepository, todo: Todo): Observable<Todo> {
+        const todoList = this.allTodos.filter((todoInFilter) => todoInFilter.status === todo.status);
         let newOrder: number;
         if (todoList.length !== 0) {
             newOrder = todoList[todoList.length-1].order + 1;
         } else {
             newOrder = 1;
         }
-        this.store.dispatch(todoActions.createTodo({ todo: { ...todo, order: newOrder } }));
+        // this.store.dispatch(todoActions.createTodo({ todo: { ...todo, order: newOrder } }));
+        return todoRep.createTodo({ ...todo, order: newOrder });
     }
 
     private copyTodo(old: Todo): Todo {

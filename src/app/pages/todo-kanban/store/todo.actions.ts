@@ -4,6 +4,7 @@ import { props } from "@ngrx/store";
 
 import { emptyProps } from "@ngrx/store";
 import { Todo } from "../models/todo.model";
+import { Status } from "../models/status.model";
 
 export const todoActions = createActionGroup({
     source: 'Todo',
@@ -17,6 +18,7 @@ export const todoActions = createActionGroup({
         createTodoFailure: emptyProps(),
 
         updateTodo: props<{ id: string, todo: Todo }>(),
+        updateTodoWithOrder: props<{ todo: Todo, position: number, fromStatusCategory: Status, toStatusCategory: Status }>(),
         updateTodoSuccess: props<{ todo: Todo }>(),
         updateTodoFailure: emptyProps(),
 

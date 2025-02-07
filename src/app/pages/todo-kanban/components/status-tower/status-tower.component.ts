@@ -11,6 +11,7 @@ import { CreateTaskDialogComponent } from "../create-task-dialog/create-task-dia
 import { Store } from "@ngrx/store";
 import { CdkDragDrop, CdkDropList } from "@angular/cdk/drag-drop";
 import { OrderService } from "../../services/order.service";
+import { todoActions } from "../../store/todo.actions";
 
 @Component({
     selector: 'app-status-tower',
@@ -57,12 +58,14 @@ export class StatusTowerComponent {
                     createdAt: new Date().toISOString(),
                     order: -1,
                 }
-                this.orderService.createCard(tempTodo, this.status);
+                // this.orderService.createCard(tempTodo, this.status);
+                this.store.dispatch(todoActions.createTodo({ todo: tempTodo }));
             }
         });
     }
 
     public drop(event: CdkDragDrop<Status>): void {
-        this.orderService.moveCard(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
+        // this.orderService.moveCard(event.item.data, event.currentIndex, event.previousContainer.data, event.container.data);
+        this.store.dispatch(todoActions.updateTodoWithOrder({ todo: event.item.data, position: event.currentIndex, fromStatusCategory: event.previousContainer.data, toStatusCategory: event.container.data }));
     }
 }
