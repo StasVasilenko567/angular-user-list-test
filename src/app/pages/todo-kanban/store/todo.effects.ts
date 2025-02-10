@@ -13,8 +13,8 @@ import { OrderService } from "../services/order.service";
 export class TodoEffects {
     private readonly actions$: Actions = inject(Actions);
     private readonly orderService: OrderService = inject(OrderService);
-    private readonly apiService: TodoRepository = inject(TodoApiService);
-    // private readonly todoRepository: TodoRepository = inject(TodoLocalService);
+    // private readonly apiService: TodoRepository = inject(TodoApiService);
+    private readonly apiService: TodoRepository = inject(TodoLocalService);
 
     public loadTodos$ = createEffect(() => this.actions$.pipe(
         ofType(todoActions.loadTodos),

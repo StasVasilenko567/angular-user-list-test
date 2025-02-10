@@ -2,11 +2,7 @@ import { HttpClient } from "@angular/common/http";
 import { inject, Injectable } from "@angular/core";
 import { Observable } from "rxjs";
 import { User } from "app/pages/users-page/models/user.model";
-
-export const API_ENDPOINTS = {
-    HOST: 'http://localhost:3000/',
-    USERS: 'users/'
-}
+import { API_ENDPOINTS } from "app/shared/configs/api-endoints.config";
 
 @Injectable({providedIn: 'root'})
 export class UserApiService {

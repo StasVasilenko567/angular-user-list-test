@@ -24,14 +24,14 @@ export class UserListComponent implements OnInit, OnDestroy {
   public ngOnInit(): void {
     this.store.dispatch(userActions.loadUsers());
 
-    this.isErrorSubscription = this.isError$.subscribe((isError) => {
-      if (isError) {
-        console.error('Ошибка загрузки пользователей');
-      }
-    });
+    // this.isErrorSubscription = this.isError$.subscribe((isError) => {
+    //   if (isError) {
+    //     console.error('Ошибка загрузки пользователей');
+    //   }
+    // });
   }
 
   public ngOnDestroy(): void {
-    this.isErrorSubscription?.unsubscribe();
+    // this.isErrorSubscription?.unsubscribe();
   }
 }

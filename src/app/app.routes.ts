@@ -14,6 +14,10 @@ export const routes: Routes = [
         loadChildren: () => import('./pages/todo-kanban/todo.module').then(m => m.TodoKanbanModule)
     },
     {
+        path: 'charts',
+        loadChildren: () => import('./pages/charts-page/charts.module').then(m => m.ChartsModule)
+    },
+    {
         path: '**',
         redirectTo: '/users',
     }

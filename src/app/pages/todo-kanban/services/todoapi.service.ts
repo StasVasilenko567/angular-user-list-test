@@ -3,11 +3,7 @@ import { inject, Injectable } from "@angular/core";
 import { Todo } from "../models/todo.model";
 import { Observable } from "rxjs";
 import { TodoRepository } from "../interfaces/todo-repository.interface";
-
-const API_ENDPOINTS = {
-    HOST: 'http://localhost:3000',
-    TODOS: '/todos',
-}
+import { API_ENDPOINTS } from "app/shared/configs/api-endoints.config";
 
 @Injectable({
     providedIn: 'root'
