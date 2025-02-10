@@ -13,7 +13,7 @@ export class UserApiService {
     }
 
     deleteUser(id: string): Observable<User> {
-        return this.http.delete<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS + id);
+        return this.http.delete<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS+"/" + id);
     }
 
     addUser(user: User): Observable<User> {
@@ -21,6 +21,6 @@ export class UserApiService {
     }
 
     updateUser(id: string, user: User): Observable<User> {
-        return this.http.put<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS + id, user);
+        return this.http.put<User>(API_ENDPOINTS.HOST + API_ENDPOINTS.USERS+"/" + id, user);
     }
 }

@@ -1,9 +1,9 @@
-import { Component, inject, OnDestroy, OnInit } from "@angular/core";
+import { Component, inject, OnDestroy, OnInit, ViewChild } from "@angular/core";
 import { Store } from "@ngrx/store";
 import { pineActions } from "../../store/pine.actions";
 import { pineSelectors } from "../../store/pine.selectors";
 import { Subscription } from "rxjs";
-import { HighchartsChartModule } from "highcharts-angular";
+import { HighchartsChartComponent, HighchartsChartModule } from "highcharts-angular";
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -20,8 +20,11 @@ export class PinesChartComponent implements OnInit, OnDestroy {
 
     public pines$ = this.store.select(pineSelectors.selectPines);
 
+    public update: boolean = false;
+
     private pinesSubscription: Subscription | undefined;
-    private data: any[] = [];
+
+    @ViewChild('chart') chart: HighchartsChartComponent|undefined;
 
     public chartOptions: Highcharts.Options = {
         chart: {
@@ -75,11 +78,6 @@ export class PinesChartComponent implements OnInit, OnDestroy {
             }
         },
 
-        // series: [{
-        //     type: 'area',
-        //     name: 'USD to EUR',
-        //     data: this.data,
-        // }]
         series: []
     };
     public Highcharts: typeof Highcharts = Highcharts;
@@ -88,15 +86,12 @@ export class PinesChartComponent implements OnInit, OnDestroy {
         this.store.dispatch(pineActions.loadPines());
 
         this.pinesSubscription = this.pines$.subscribe((pines) => {
-            // this.chartOptions.series![0].setData(pines.map(pine => pine));
             this.chartOptions.series![0] = {
                 type: 'area',
                 name: 'Красивые ёлочки',
                 data: pines
             }
-            
-            // this.data = pines.map(pine => pine);
-            console.log(pines);
+            this.chart?.updateChange.emit(true);
         });
     }
 

@@ -1,6 +1,7 @@
-<highcharts-chart 
+<highcharts-chart #chart
     [options]="chartOptions"
     [Highcharts]="Highcharts"
     style="width: 700px; height: 400px; display: block;"
+    [(update)]="update"
 >
 </highcharts-chart>
