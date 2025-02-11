@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { HighchartsChartComponent, HighchartsChartModule } from 'highcharts-angular';
+import { HighchartsChartModule } from 'highcharts-angular';
 import * as Highcharts from 'highcharts';
 
 @Component({
@@ -38,7 +38,7 @@ export class XmasComponent {
                         dataLabels: [{
                             enabled: true,
                             formatter: function() {
-                                return "Застрял мандарин в жопе";
+                                return "Проиграл дом в карты";
                             },
                         }]
                     },

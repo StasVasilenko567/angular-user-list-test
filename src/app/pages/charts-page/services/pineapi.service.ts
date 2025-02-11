@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 export class PineApiService {
     private readonly http = inject(HttpClient);
 
-    public getPines(): Observable<any[]> {
-        return this.http.get<any[]>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.PINES}`);
+    public getPines(): Observable<[number, number]> {
+        return this.http.get<[number, number]>(`${API_ENDPOINTS.HOST}${API_ENDPOINTS.PINES}`);
     }
 }

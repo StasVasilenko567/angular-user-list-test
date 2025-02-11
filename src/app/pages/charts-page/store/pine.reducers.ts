@@ -6,7 +6,7 @@ export interface PinesState {
     isLoading: boolean;
     isError: boolean;
     data: {
-        pines: any[];
+        pines: number[];
     }
 }
 

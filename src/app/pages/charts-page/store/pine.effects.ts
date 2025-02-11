@@ -12,7 +12,7 @@ export class PineEffects {
     public loadPines$ = createEffect(() => this.actions$.pipe(
         ofType(pineActions.loadPines),
         switchMap(() => this.apiService.getPines().pipe(
-            map((pines: any[]) => pineActions.loadPinesSuccess({ pines })),
+            map((pines: [number, number]) => pineActions.loadPinesSuccess({ pines })),
             catchError(() => of(pineActions.loadPinesFailure()))
         ))
     ));

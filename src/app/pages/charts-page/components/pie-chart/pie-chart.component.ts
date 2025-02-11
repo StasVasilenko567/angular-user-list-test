@@ -15,8 +15,7 @@ export class PieChartComponent {
 
     public options: Highcharts.Options = {   
       chart : {
-        //  plotBorderWidth: null,
-         plotShadow: false
+         plotShadow: true
       },
       title : {
          text: 'Предпочтения в девушках'   
@@ -32,7 +31,6 @@ export class PieChartComponent {
                enabled: true,
                format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                style: {
-                  // color: (Highcharts.theme && Highcharts.theme.contrastTextColor)||
                   color: 'black'
                }
             }
