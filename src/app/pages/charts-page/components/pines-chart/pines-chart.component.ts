@@ -19,12 +19,11 @@ export class PinesChartComponent implements OnInit, OnDestroy {
     private readonly store: Store = inject(Store);
 
     public pines$ = this.store.select(pineSelectors.selectPines);
+    private pinesSubscription: Subscription | undefined;
 
     public update: boolean = false;
 
-    private pinesSubscription: Subscription | undefined;
-
-    @ViewChild('chart') chart: HighchartsChartComponent|undefined;
+    @ViewChild('chart') private chart: HighchartsChartComponent|undefined;
 
     public chartOptions: Highcharts.Options = {
         chart: {
