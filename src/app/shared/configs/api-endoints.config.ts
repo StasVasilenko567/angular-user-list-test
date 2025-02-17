@@ -3,4 +3,5 @@ export const API_ENDPOINTS = {
     PINES: "/pines",
     TODOS: "/todos",
     USERS: "/users",
+    WORKERS: "/workers",
 }

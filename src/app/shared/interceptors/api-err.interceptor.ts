@@ -26,7 +26,6 @@ export class ApiErrorInterceptor implements HttpInterceptor {
         return next.handle(req).pipe(
             tap({
                 error: (err: any) => {
-                    console.log('error class')
                     this.dialog.open(ErrorDialogComponent, {
                         data: { message: err.message },
                     });

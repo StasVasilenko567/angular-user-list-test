@@ -26,7 +26,6 @@ export class TodoEffects {
 
     public createTodo$ = createEffect(() => this.actions$.pipe(
         ofType(todoActions.createTodo),
-        // switchMap((action) => this.todoRepository.createTodo(action.todo).pipe(
         switchMap((action) => this.orderService.createCard(this.apiService, action.todo).pipe(
             map((todo: Todo) => todoActions.createTodoSuccess({ todo })),
             catchError(() => of(todoActions.createTodoFailure()))

@@ -9,7 +9,7 @@ export interface TodoState {
     data: {
         todos: Todo[];
     }
-}
+};
 
 export const initialState: TodoState = {
     isLoading: false,

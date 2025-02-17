@@ -11,10 +11,6 @@ interface CreateTaskDialogForm {
   description: FormControl<string | null | undefined>;
 }
 
-interface CreateTaskDialogData {
-  
-}
-
 @Component({
   selector: 'app-create-task-dialog',
   templateUrl: './create-task-dialog.component.html',
@@ -32,7 +28,7 @@ interface CreateTaskDialogData {
   ],
 })
 export class CreateTaskDialogComponent {
-  public readonly data = inject<CreateTaskDialogData>(MAT_DIALOG_DATA);
+  public readonly data = inject(MAT_DIALOG_DATA);
   public readonly dialogRef = inject(MatDialogRef<CreateTaskDialogComponent>);
   public form: FormGroup<CreateTaskDialogForm> = new FormGroup({
     "title": new FormControl<string | null | undefined>(null, [Validators.required]),

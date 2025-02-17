@@ -1,0 +1,15 @@
+button {
+    border-radius: 0;
+    border: 1px solid rgb(150, 150, 150);
+    color: black !important;
+}
+
+div {
+    background-color: #f0f0f0;
+    padding: 10px;
+    margin: 10px;
+
+    -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}

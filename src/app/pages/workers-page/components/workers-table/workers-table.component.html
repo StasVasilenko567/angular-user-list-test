@@ -1,0 +1,16 @@
+<div>
+    <table>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Отдел</th>
+            <th scope="col" class="wide">Сотрудник</th>
+            <th scope="col">Положение</th>
+        </tr>
+        <tr scope="row" *ngFor="let worker of workers()">
+            <th scope="row">{{ worker.employeeId }}</th>
+            <td>{{ worker.department }}</td>
+            <td>{{ worker.employee }}</td>
+            <td>{{ worker.employeeStatus }}</td>
+        </tr>
+    </table>
+</div>

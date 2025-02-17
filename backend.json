@@ -1,4 +1,17 @@
 {
+  "workers": [
+    {
+      "id": "70e4",
+      "data": {
+        "departmentId": "12",
+        "department": "ads",
+        "employeeId": 1,
+        "employee": "wfg",
+        "employeeStatus": "0",
+        "collection": []
+      }
+    }
+  ],
   "users": [
     {
       "id": "jjtf2a",

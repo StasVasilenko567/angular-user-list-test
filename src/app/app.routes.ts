@@ -18,6 +18,10 @@ export const routes: Routes = [
         loadChildren: () => import('./pages/charts-page/charts.module').then(m => m.ChartsModule)
     },
     {
+        path: 'workers',
+        loadChildren: () => import('./pages/workers-page/workers-page.module').then(m => m.WorkersPageModule)
+    },
+    {
         path: '**',
         redirectTo: '/users',
     }
