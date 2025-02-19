@@ -8,6 +8,7 @@ import { MatIcon } from "@angular/material/icon";
 import { MatInputModule } from "@angular/material/input";
 import { employeeStatus } from "app/pages/workers-page/models/enums.models";
 import {MatSelectModule} from '@angular/material/select';
+import { RandomUtils } from "app/pages/workers-page/utils/randomizer.util";
 
 interface CreateEmployeeDialogForm {
     name: FormControl<string | null | undefined>;
@@ -42,12 +43,18 @@ export class CreateEmployeeDialogComponent {
         { value: 1, label: "новичок" },
     ];
 
+    public readonly departments = RandomUtils.departmentNames.map((name, index) => ({ value: index, label: name }));
+
     public form: FormGroup<CreateEmployeeDialogForm> = new FormGroup({
         "name": new FormControl<string | null | undefined>(null, [Validators.required]),
         "employeeStatus": new FormControl<employeeStatus | null | undefined>(null, [Validators.required]),
         "department": new FormControl<string | null | undefined>(null, [Validators.required]),
         "departmentId": new FormControl<number | null | undefined>(null, [Validators.required])
     })
+
+    public departmentSelected(event: any) {
+        this.form.patchValue({ departmentId: this.departments.find(d => d.label === event)?.value as number });
+    }
 
     public cancel() {
         this.dialogRef.close();

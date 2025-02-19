@@ -8,10 +8,6 @@
         </mat-form-field>
 
         <p *ngIf="form.controls.employeeStatus.invalid && form.controls.employeeStatus.touched">Укажите должность сотрудника!</p>
-        <!-- <mat-form-field>
-            <mat-label>Должность сотрудника</mat-label>
-            <input matInput formControlName="position">
-        </mat-form-field> -->
         <mat-form-field>
             <mat-label>Должность сотрудника</mat-label>
             <mat-select formControlName="employeeStatus">
@@ -19,16 +15,12 @@
             </mat-select>
         </mat-form-field>
 
-        <p *ngIf="form.controls.department.invalid && form.controls.department.touched">Введите отдел сотрудника!</p>
+        <p *ngIf="form.controls.department.invalid && form.controls.department.touched">Укажите отдел сотрудника!</p>
         <mat-form-field>
             <mat-label>Отдел сотрудника</mat-label>
-            <input matInput formControlName="department">
-        </mat-form-field>
-
-        <p *ngIf="form.controls.departmentId.invalid && form.controls.departmentId.touched">Введите ID отдела!</p>
-        <mat-form-field>
-            <mat-label>ID отдела</mat-label>
-            <input matInput formControlName="departmentId">
+            <mat-select (valueChange)="departmentSelected($event)" formControlName="department">
+                <mat-option *ngFor="let dep of departments" [value]="dep.label">{{ dep.label }}</mat-option>
+            </mat-select>
         </mat-form-field>
     </form>
 </mat-dialog-content>

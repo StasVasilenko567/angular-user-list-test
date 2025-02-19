@@ -38,6 +38,7 @@ export class WorkerToolboxComponent {
                     employeeStatus: result.employeeStatus,
                     collection: []
                 };
+                temp_data.collection = this.randomizerService.randomDays(temp_data);
                 this.workersFacade.addEmployee(temp_data);
             }
         });
