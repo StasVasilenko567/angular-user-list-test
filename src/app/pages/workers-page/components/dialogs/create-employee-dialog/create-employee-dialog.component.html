@@ -7,10 +7,16 @@
             <input matInput formControlName="name">
         </mat-form-field>
 
-        <p *ngIf="form.controls.position.invalid && form.controls.position.touched">Введите должность сотрудника!</p>
-        <mat-form-field>
+        <p *ngIf="form.controls.employeeStatus.invalid && form.controls.employeeStatus.touched">Укажите должность сотрудника!</p>
+        <!-- <mat-form-field>
             <mat-label>Должность сотрудника</mat-label>
             <input matInput formControlName="position">
+        </mat-form-field> -->
+        <mat-form-field>
+            <mat-label>Должность сотрудника</mat-label>
+            <mat-select formControlName="employeeStatus">
+                <mat-option *ngFor="let status of employeeStatus" [value]="status.value">{{ status.label }}</mat-option>
+            </mat-select>
         </mat-form-field>
 
         <p *ngIf="form.controls.department.invalid && form.controls.department.touched">Введите отдел сотрудника!</p>

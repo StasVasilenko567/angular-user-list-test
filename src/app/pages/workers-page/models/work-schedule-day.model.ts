@@ -5,5 +5,5 @@ export interface WorkScheduleDay {
     shift: string,
     date: string,
     dayOffType: dayOffType,
-    brigadeId: number,
+    departmentId: number,
 }

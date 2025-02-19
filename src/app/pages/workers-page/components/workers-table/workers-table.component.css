@@ -3,6 +3,8 @@ div {
     padding: 10px;
     margin: 10px;
 
+    height: 80%;
+
     -webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     -moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
     box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
@@ -11,6 +13,13 @@ div {
 table {
     /* margin: 30px; */
     border-collapse: collapse;
+    
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+
+    overflow-y: auto;
+    height: 100%;
 }
 
 th, td {
@@ -20,6 +29,37 @@ th, td {
     border: 1px solid #bbbbbb;
 }
 
-.wide {
+.table__wide {
     width: 150px;
+}
+
+.table__head th {
+    background-color: #e0e0e0;
+
+    position: sticky;
+    top: 0;
+}
+
+.table__numbers {
+    min-width: 30px;
+    text-align: center;
+}
+
+.table__brigade {
+    color: gray;
+}
+
+.day__green {
+    background-color: #8ae070;
+}
+.day__green span {
+    display: none;
+}
+
+.day__red {
+    background-color: #e07070;
+}
+
+.day__uncompleted span {
+    color: red !important;
 }

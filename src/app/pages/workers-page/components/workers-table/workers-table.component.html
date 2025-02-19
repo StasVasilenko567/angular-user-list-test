@@ -1,16 +1,22 @@
 <div>
     <table>
-        <tr>
+        <tr class="table__head">
             <th scope="col">ID</th>
             <th scope="col">Отдел</th>
-            <th scope="col" class="wide">Сотрудник</th>
+            <th scope="col" class="table__wide">Сотрудник</th>
             <th scope="col">Положение</th>
+            <th class="table__numbers" *ngFor="let i of numbers" scope="col">{{ i }}</th>
         </tr>
         <tr scope="row" *ngFor="let worker of workers()">
             <th scope="row">{{ worker.employeeId }}</th>
             <td>{{ worker.department }}</td>
             <td>{{ worker.employee }}</td>
-            <td>{{ worker.employeeStatus }}</td>
+            <td>{{ employeeStatus[worker.employeeStatus] }}</td>
+            <td *ngFor="let i of numbers" scope="row" class="{{ worker.collection[i] | dayColor }}">
+                <span>{{ worker.collection[i].shift }}</span>
+                <br/>
+                <span class="table__brigade">Б. №{{ worker.collection[i].departmentId }}</span>
+            </td>
         </tr>
     </table>
 </div>

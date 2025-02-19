@@ -5,6 +5,7 @@ import { CreateEmployeeDialogComponent } from "../dialogs/create-employee-dialog
 import { MatIcon } from "@angular/material/icon";
 import { WorkersFacade } from "../../facades/workers.facade";
 import { WorkSheduleRow } from "../../models/work-shedule-row.model";
+import { RandomizerService } from "../../services/randomizer.service";
 
 @Component({
     selector: 'app-worker-toolbox',
@@ -15,12 +16,14 @@ import { WorkSheduleRow } from "../../models/work-shedule-row.model";
         MatIcon,
     ],
     providers: [
-        WorkersFacade
+        WorkersFacade,
+        RandomizerService,
     ]
 })
 export class WorkerToolboxComponent {
     private readonly dialog = inject(MatDialog);
     private readonly workersFacade = inject(WorkersFacade);
+    private readonly randomizerService = inject(RandomizerService);
 
     public openCreateDialog() {
         const dialogRef = this.dialog.open(CreateEmployeeDialogComponent);
@@ -30,13 +33,18 @@ export class WorkerToolboxComponent {
                 const temp_data: WorkSheduleRow = {
                     departmentId: result.departmentId,
                     department: result.department,
-                    employeeId: this.workersFacade.workers().length + 1,
+                    employeeId: this.workersFacade.workers().length,
                     employee: result.name,
-                    employeeStatus: result.position,
+                    employeeStatus: result.employeeStatus,
                     collection: []
                 };
                 this.workersFacade.addEmployee(temp_data);
             }
         });
+    }
+
+    public randomWorker() {
+        this.randomizerService.randomWorker();
+        window.location.reload();
     }
 }
