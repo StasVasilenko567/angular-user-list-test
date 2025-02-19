@@ -25,7 +25,6 @@ export class DepartmentManagementService {
 
         for (let i = 0; i < this.workers().length; i++) {
             if (this.workers()[i].departmentId === departmentId && this.workers()[i].collection[dayNumber].dayOffType === 4) {
-                // console.log(this.workers()[i].collection[dayNumber]);
                 
                 if (this.workers()[i].collection[dayNumber].shift.startsWith("У")) {
                     morningWorkersToday.push({
@@ -42,26 +41,17 @@ export class DepartmentManagementService {
                 }
             }
         }
-
-        // console.log("У");
-        // if (morningWorkersToday.length !== 0)
-        //     console.log(morningWorkersToday);
-
-        // console.log("В");
-        // console.log(eveningWorkersToday);
         
         if (morningWorkersToday.length >= 2) {
             morningWorkersToday.forEach(worker => {
                 if (worker.isBoss) {
                     flag = true;
-                    console.log("Гусь")
                 }
             });
         }
         if (eveningWorkersToday.length >= 2) {
             eveningWorkersToday.forEach(worker => {
                 if (worker.isBoss) {
-                    console.log("Свинья")
                     flag = true;
                 }
             });
