@@ -1,10 +1,25 @@
-import { inject, Injectable } from "@angular/core";
+import { effect, inject, Injectable, signal, Signal } from "@angular/core";
 import { WorkersFacade } from "../facades/workers.facade";
+import { WorkSheduleRow } from "../models/work-shedule-row.model";
 
 interface shiftDataSummary {
     isBoss: boolean;
     shiftType: string;
     workerName: string;
+}
+
+export enum rowDataType {
+    summary, employee
+}
+
+interface departmentSummary {
+    collection: number[];
+    department: string;
+}
+
+export interface rowData {
+    type: rowDataType;
+    data: any;
 }
 
 @Injectable()
@@ -58,4 +73,51 @@ export class DepartmentManagementService {
         }
         return flag;
     }
+
+    public getFreeEmployeesAt(dayNumber: number, departmentId: number): number {
+        let freeEmployees = 0;
+        this.workers().forEach((w) => {
+            if (w.departmentId === departmentId && w.collection[dayNumber].dayOffType === 4 && !this.checkDepartmentAt(departmentId, dayNumber)) {
+                freeEmployees++;
+            }
+        });
+        return freeEmployees;
+    }
+
+    public getDataRows(): rowData[] {
+        if (this.workers().length === 0) {
+            return [];
+        }
+        
+        const rows: rowData[] = [];
+        let lastDepartment: number = this.workers()[0].departmentId;
+
+        this.workers().forEach((worker,i) => {
+            if (worker.departmentId !== lastDepartment) {
+                rows.push({
+                    type: rowDataType.summary,
+                    data: {
+                        collection: Array(32).fill(0).map((x,j)=>j).map((w,n) => this.getFreeEmployeesAt(n, lastDepartment)),
+                        department: this.workers()[i-1].department,
+                    }
+                });
+                lastDepartment = worker.departmentId;
+            }
+
+            rows.push({
+                type: rowDataType.employee,
+                data: worker
+            });
+        });
+
+        rows.push({
+            type: rowDataType.summary,
+            data: {
+                collection: Array(32).fill(0).map((x,i)=>i+1).map((w,i) => this.getFreeEmployeesAt(i, lastDepartment)),
+                department: this.workers()[this.workers().length-1].department,
+            }
+        })
+        return rows;
+    }
+
 }

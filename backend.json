@@ -1,5 +1,2130 @@
 {
-  "workers": [],
+  "workers": [
+    {
+      "id": "5a9c",
+      "data": {
+        "departmentId": 2,
+        "department": "Отдел жертвоприношений",
+        "employeeId": 0,
+        "employee": "Лёха (потолок)",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "У7",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 1,
+            "shift": "У5",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 2,
+            "shift": "У3",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 3,
+            "shift": "У5",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 4,
+            "shift": "В7",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 5,
+            "shift": "У1",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 6,
+            "shift": "У4",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 7,
+            "shift": "В4",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 8,
+            "shift": "В3",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 9,
+            "shift": "В6",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 10,
+            "shift": "В8",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 11,
+            "shift": "В6",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 12,
+            "shift": "У8",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 13,
+            "shift": "У5",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 14,
+            "shift": "В6",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 15,
+            "shift": "У8",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 16,
+            "shift": "У7",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 17,
+            "shift": "В4",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 18,
+            "shift": "У2",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 19,
+            "shift": "В2",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 20,
+            "shift": "В2",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 21,
+            "shift": "У2",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 22,
+            "shift": "В3",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 23,
+            "shift": "У2",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 24,
+            "shift": "В5",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 25,
+            "shift": "В2",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 26,
+            "shift": "В1",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 27,
+            "shift": "У1",
+            "date": "27",
+            "dayOffType": 1,
+            "departmentId": 2
+          },
+          {
+            "id": 28,
+            "shift": "У5",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 29,
+            "shift": "В4",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 30,
+            "shift": "У5",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 31,
+            "shift": "У7",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "ef06",
+      "data": {
+        "departmentId": 1,
+        "department": "Отдел совета безопасности Нигерии",
+        "employeeId": 1,
+        "employee": "Вазген",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "В7",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 1,
+            "shift": "В6",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 2,
+            "shift": "У4",
+            "date": "2",
+            "dayOffType": 3,
+            "departmentId": 1
+          },
+          {
+            "id": 3,
+            "shift": "У6",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 4,
+            "shift": "У3",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 5,
+            "shift": "В6",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 6,
+            "shift": "У7",
+            "date": "6",
+            "dayOffType": 1,
+            "departmentId": 1
+          },
+          {
+            "id": 7,
+            "shift": "В7",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 8,
+            "shift": "В7",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 9,
+            "shift": "У1",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 10,
+            "shift": "У8",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 11,
+            "shift": "У7",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 12,
+            "shift": "У3",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 13,
+            "shift": "В2",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 14,
+            "shift": "В8",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 15,
+            "shift": "В4",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 16,
+            "shift": "В8",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 17,
+            "shift": "У3",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 18,
+            "shift": "У3",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 19,
+            "shift": "В7",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 20,
+            "shift": "В6",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 21,
+            "shift": "В3",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 22,
+            "shift": "У8",
+            "date": "22",
+            "dayOffType": 0,
+            "departmentId": 1
+          },
+          {
+            "id": 23,
+            "shift": "У5",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 24,
+            "shift": "У4",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 25,
+            "shift": "В8",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 26,
+            "shift": "В8",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 27,
+            "shift": "У8",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 28,
+            "shift": "У8",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 29,
+            "shift": "У8",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 30,
+            "shift": "В3",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 31,
+            "shift": "У7",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "8495",
+      "data": {
+        "departmentId": 0,
+        "department": "Отдел Польши",
+        "employeeId": 2,
+        "employee": "Олег",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "У2",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 1,
+            "shift": "В4",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 2,
+            "shift": "У2",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 3,
+            "shift": "В7",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 4,
+            "shift": "У6",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 5,
+            "shift": "У7",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 6,
+            "shift": "У3",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 7,
+            "shift": "У2",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 8,
+            "shift": "У4",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 9,
+            "shift": "В4",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 10,
+            "shift": "В3",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 11,
+            "shift": "У2",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 12,
+            "shift": "У4",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 13,
+            "shift": "В5",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 14,
+            "shift": "У8",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 15,
+            "shift": "В1",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 16,
+            "shift": "В7",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 17,
+            "shift": "У5",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 18,
+            "shift": "У5",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 19,
+            "shift": "В3",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 20,
+            "shift": "У6",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 21,
+            "shift": "В7",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 22,
+            "shift": "У6",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 23,
+            "shift": "В7",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 24,
+            "shift": "У1",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 25,
+            "shift": "В3",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 26,
+            "shift": "У4",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 27,
+            "shift": "В4",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 28,
+            "shift": "В6",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 29,
+            "shift": "У5",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 30,
+            "shift": "У4",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 0
+          },
+          {
+            "id": 31,
+            "shift": "В5",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 0
+          }
+        ]
+      }
+    },
+    {
+      "id": "a213",
+      "data": {
+        "departmentId": 3,
+        "department": "Отдел тактического отравления",
+        "employeeId": 3,
+        "employee": "Михаил",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "В1",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 1,
+            "shift": "У1",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 2,
+            "shift": "В7",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 3,
+            "shift": "В4",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 4,
+            "shift": "В3",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 5,
+            "shift": "В7",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 6,
+            "shift": "У2",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 7,
+            "shift": "У2",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 8,
+            "shift": "В2",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 9,
+            "shift": "В4",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 10,
+            "shift": "В6",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 11,
+            "shift": "В2",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 12,
+            "shift": "У2",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 13,
+            "shift": "В4",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 14,
+            "shift": "У2",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 15,
+            "shift": "У7",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 16,
+            "shift": "В5",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 17,
+            "shift": "У4",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 18,
+            "shift": "В5",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 19,
+            "shift": "У2",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 20,
+            "shift": "У2",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 21,
+            "shift": "У7",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 22,
+            "shift": "В8",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 23,
+            "shift": "В8",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 24,
+            "shift": "У7",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 25,
+            "shift": "В1",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 26,
+            "shift": "В4",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 27,
+            "shift": "У6",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 28,
+            "shift": "В5",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 29,
+            "shift": "В4",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 30,
+            "shift": "В2",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 3
+          },
+          {
+            "id": 31,
+            "shift": "В2",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 3
+          }
+        ]
+      }
+    },
+    {
+      "id": "4ba7",
+      "data": {
+        "departmentId": 2,
+        "department": "Отдел жертвоприношений",
+        "employeeId": 4,
+        "employee": "Владимир",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "У2",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 1,
+            "shift": "У5",
+            "date": "1",
+            "dayOffType": 1,
+            "departmentId": 2
+          },
+          {
+            "id": 2,
+            "shift": "У1",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 3,
+            "shift": "У4",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 4,
+            "shift": "В3",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 5,
+            "shift": "У8",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 6,
+            "shift": "У4",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 7,
+            "shift": "В2",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 8,
+            "shift": "У4",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 9,
+            "shift": "У2",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 10,
+            "shift": "В3",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 11,
+            "shift": "В2",
+            "date": "11",
+            "dayOffType": 2,
+            "departmentId": 2
+          },
+          {
+            "id": 12,
+            "shift": "У5",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 13,
+            "shift": "В3",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 14,
+            "shift": "В1",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 15,
+            "shift": "У5",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 16,
+            "shift": "В5",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 17,
+            "shift": "В3",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 18,
+            "shift": "У1",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 19,
+            "shift": "У2",
+            "date": "19",
+            "dayOffType": 3,
+            "departmentId": 2
+          },
+          {
+            "id": 20,
+            "shift": "У1",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 21,
+            "shift": "У1",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 22,
+            "shift": "У4",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 23,
+            "shift": "В4",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 24,
+            "shift": "У4",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 25,
+            "shift": "В7",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 26,
+            "shift": "В6",
+            "date": "26",
+            "dayOffType": 0,
+            "departmentId": 2
+          },
+          {
+            "id": 27,
+            "shift": "У6",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 28,
+            "shift": "У5",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 29,
+            "shift": "В4",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 30,
+            "shift": "В3",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 31,
+            "shift": "В7",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "e1b9",
+      "data": {
+        "departmentId": 1,
+        "department": "Отдел совета безопасности Нигерии",
+        "employeeId": 5,
+        "employee": "Мария",
+        "employeeStatus": 1,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "У3",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 1,
+            "shift": "У5",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 2,
+            "shift": "В8",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 3,
+            "shift": "У6",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 4,
+            "shift": "У2",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 5,
+            "shift": "У3",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 6,
+            "shift": "У3",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 7,
+            "shift": "В5",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 8,
+            "shift": "В5",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 9,
+            "shift": "В3",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 10,
+            "shift": "В7",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 11,
+            "shift": "У3",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 12,
+            "shift": "У1",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 13,
+            "shift": "В1",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 14,
+            "shift": "В8",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 15,
+            "shift": "У7",
+            "date": "15",
+            "dayOffType": 2,
+            "departmentId": 1
+          },
+          {
+            "id": 16,
+            "shift": "В5",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 17,
+            "shift": "В5",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 18,
+            "shift": "У4",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 19,
+            "shift": "В7",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 20,
+            "shift": "В1",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 21,
+            "shift": "У5",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 22,
+            "shift": "В1",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 23,
+            "shift": "В2",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 24,
+            "shift": "В5",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 25,
+            "shift": "В8",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 26,
+            "shift": "У1",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 27,
+            "shift": "В7",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 28,
+            "shift": "У8",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 29,
+            "shift": "В5",
+            "date": "29",
+            "dayOffType": 3,
+            "departmentId": 1
+          },
+          {
+            "id": 30,
+            "shift": "У5",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 1
+          },
+          {
+            "id": 31,
+            "shift": "В6",
+            "date": "31",
+            "dayOffType": 1,
+            "departmentId": 1
+          }
+        ]
+      }
+    },
+    {
+      "id": "2f23",
+      "data": {
+        "departmentId": 2,
+        "department": "Отдел жертвоприношений",
+        "employeeId": 6,
+        "employee": "Алексей",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "В4",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 1,
+            "shift": "В2",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 2,
+            "shift": "У1",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 3,
+            "shift": "У4",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 4,
+            "shift": "У3",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 5,
+            "shift": "У6",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 6,
+            "shift": "У5",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 7,
+            "shift": "У5",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 8,
+            "shift": "У3",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 9,
+            "shift": "В7",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 10,
+            "shift": "У8",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 11,
+            "shift": "В8",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 12,
+            "shift": "В3",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 13,
+            "shift": "У1",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 14,
+            "shift": "У3",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 15,
+            "shift": "В2",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 16,
+            "shift": "У7",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 17,
+            "shift": "В6",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 18,
+            "shift": "У1",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 19,
+            "shift": "В2",
+            "date": "19",
+            "dayOffType": 1,
+            "departmentId": 2
+          },
+          {
+            "id": 20,
+            "shift": "В7",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 21,
+            "shift": "У8",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 22,
+            "shift": "В5",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 23,
+            "shift": "В6",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 24,
+            "shift": "В5",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 25,
+            "shift": "У1",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 26,
+            "shift": "У5",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 27,
+            "shift": "В7",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 28,
+            "shift": "У2",
+            "date": "28",
+            "dayOffType": 2,
+            "departmentId": 2
+          },
+          {
+            "id": 29,
+            "shift": "В8",
+            "date": "29",
+            "dayOffType": 3,
+            "departmentId": 2
+          },
+          {
+            "id": 30,
+            "shift": "У2",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 31,
+            "shift": "В3",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "c94c",
+      "data": {
+        "departmentId": 2,
+        "department": "Отдел жертвоприношений",
+        "employeeId": 7,
+        "employee": "Вазген",
+        "employeeStatus": 1,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "В5",
+            "date": "0",
+            "dayOffType": 2,
+            "departmentId": 2
+          },
+          {
+            "id": 1,
+            "shift": "В6",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 2,
+            "shift": "В8",
+            "date": "2",
+            "dayOffType": 2,
+            "departmentId": 2
+          },
+          {
+            "id": 3,
+            "shift": "В7",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 4,
+            "shift": "У7",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 5,
+            "shift": "У4",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 6,
+            "shift": "У3",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 7,
+            "shift": "В6",
+            "date": "7",
+            "dayOffType": 1,
+            "departmentId": 2
+          },
+          {
+            "id": 8,
+            "shift": "У8",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 9,
+            "shift": "У2",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 10,
+            "shift": "У5",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 11,
+            "shift": "В2",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 12,
+            "shift": "У3",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 13,
+            "shift": "В8",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 14,
+            "shift": "В7",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 15,
+            "shift": "У8",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 16,
+            "shift": "У6",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 17,
+            "shift": "У3",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 18,
+            "shift": "В7",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 19,
+            "shift": "У6",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 20,
+            "shift": "У2",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 21,
+            "shift": "У5",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 22,
+            "shift": "В8",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 23,
+            "shift": "У6",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 24,
+            "shift": "В2",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 25,
+            "shift": "У4",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 26,
+            "shift": "В5",
+            "date": "26",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 27,
+            "shift": "В6",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 28,
+            "shift": "В6",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 29,
+            "shift": "У7",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 30,
+            "shift": "В2",
+            "date": "30",
+            "dayOffType": 0,
+            "departmentId": 2
+          },
+          {
+            "id": 31,
+            "shift": "В8",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 2
+          }
+        ]
+      }
+    },
+    {
+      "id": "ea84",
+      "data": {
+        "departmentId": 2,
+        "department": "Отдел жертвоприношений",
+        "employeeId": 8,
+        "employee": "Пётр",
+        "employeeStatus": 0,
+        "collection": [
+          {
+            "id": 0,
+            "shift": "В4",
+            "date": "0",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 1,
+            "shift": "В3",
+            "date": "1",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 2,
+            "shift": "У1",
+            "date": "2",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 3,
+            "shift": "В5",
+            "date": "3",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 4,
+            "shift": "В6",
+            "date": "4",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 5,
+            "shift": "В1",
+            "date": "5",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 6,
+            "shift": "В6",
+            "date": "6",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 7,
+            "shift": "У1",
+            "date": "7",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 8,
+            "shift": "У2",
+            "date": "8",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 9,
+            "shift": "У3",
+            "date": "9",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 10,
+            "shift": "У7",
+            "date": "10",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 11,
+            "shift": "У4",
+            "date": "11",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 12,
+            "shift": "В8",
+            "date": "12",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 13,
+            "shift": "У5",
+            "date": "13",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 14,
+            "shift": "У5",
+            "date": "14",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 15,
+            "shift": "У3",
+            "date": "15",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 16,
+            "shift": "У5",
+            "date": "16",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 17,
+            "shift": "В3",
+            "date": "17",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 18,
+            "shift": "У1",
+            "date": "18",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 19,
+            "shift": "У2",
+            "date": "19",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 20,
+            "shift": "В4",
+            "date": "20",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 21,
+            "shift": "У4",
+            "date": "21",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 22,
+            "shift": "В1",
+            "date": "22",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 23,
+            "shift": "У8",
+            "date": "23",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 24,
+            "shift": "У7",
+            "date": "24",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 25,
+            "shift": "В2",
+            "date": "25",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 26,
+            "shift": "У7",
+            "date": "26",
+            "dayOffType": 0,
+            "departmentId": 2
+          },
+          {
+            "id": 27,
+            "shift": "У3",
+            "date": "27",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 28,
+            "shift": "В2",
+            "date": "28",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 29,
+            "shift": "У7",
+            "date": "29",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 30,
+            "shift": "В6",
+            "date": "30",
+            "dayOffType": 4,
+            "departmentId": 2
+          },
+          {
+            "id": 31,
+            "shift": "В5",
+            "date": "31",
+            "dayOffType": 4,
+            "departmentId": 2
+          }
+        ]
+      }
+    }
+  ],
   "users": [
     {
       "id": "jjtf2a",

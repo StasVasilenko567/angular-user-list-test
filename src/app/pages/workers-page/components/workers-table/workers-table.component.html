@@ -7,16 +7,22 @@
             <th scope="col">Положение</th>
             <th class="table__numbers" *ngFor="let i of numbers" scope="col">{{ i }}</th>
         </tr>
-        <tr scope="row" *ngFor="let worker of workers()">
-            <th scope="row">{{ worker.employeeId }}</th>
-            <td>{{ worker.department }}</td>
-            <td>{{ worker.employee }}</td>
-            <td>{{ employeeStatus[worker.employeeStatus] }}</td>
-            <td *ngFor="let i of numbers" scope="row" class="{{ worker.collection[i] | dayColor }}">
-                <span>{{ worker.collection[i].shift }}</span>
-                <br/>
-                <span class="table__brigade">Б. №{{ worker.collection[i].departmentId }}</span>
-            </td>
+        <tr scope="row" *ngFor="let worker of workers">
+            <ng-template [ngIf]="worker.type === rowDataType.employee">
+                <th scope="row">{{ worker.data.employeeId }}</th>
+                <td>{{ worker.data.department }}</td>
+                <td>{{ worker.data.employee }}</td>
+                <td>{{ employeeStatus[worker.data.employeeStatus] }}</td>
+                <td *ngFor="let i of numbers" scope="row" class="{{ worker.data.collection[i] | dayColor }}">
+                    <span>{{ worker.data.collection[i].shift }}</span>
+                    <br/>
+                    <span class="table__brigade">Б. №{{ worker.data.collection[i].departmentId }}</span>
+                </td>
+            </ng-template>
+            <ng-template [ngIf]="worker.type === rowDataType.summary">
+                <td class="table__summary" colspan="4">ИТОГО свободных сотрудников на <b>{{worker.data.department}}</b> на каждый день:</td>
+                <td class="table__summary" *ngFor="let i of numbers" scope="row">{{worker.data.collection[i]}}</td>
+            </ng-template>
         </tr>
     </table>
 </div>

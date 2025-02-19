@@ -9,7 +9,7 @@ import { DepartmentManagementService } from "../../services/department-managemen
 export class WorkDayColorPipe implements PipeTransform {
     private readonly departmentService = inject(DepartmentManagementService);
 
-    public transform(wsd: WorkScheduleDay, ...args: any[]) {
+    public transform(wsd: WorkScheduleDay) {
         if (wsd.dayOffType !== 4 && this.departmentService.checkDepartmentAt(wsd.departmentId, wsd.id)) {
             return "day__green";
         } else if(wsd.dayOffType !== 4 && !this.departmentService.checkDepartmentAt(wsd.departmentId, wsd.id)) {

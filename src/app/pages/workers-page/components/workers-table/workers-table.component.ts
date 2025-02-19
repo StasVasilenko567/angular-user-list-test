@@ -1,9 +1,9 @@
-import { Component, inject } from "@angular/core";
+import { Component, effect, inject, OnInit } from "@angular/core";
 import { WorkersFacade } from "../../facades/workers.facade";
 import { CommonModule } from "@angular/common";
 import { employeeStatus } from "../../models/enums.models";
 import { WorkDayColorPipe } from "../../pipes/work-day/work-day-color.pipe";
-import { DepartmentManagementService } from "../../services/department-management.service";
+import { DepartmentManagementService, rowDataType } from "../../services/department-management.service";
 import {MatMenuModule} from '@angular/material/menu';
 import { WorkSheduleRow } from "../../models/work-shedule-row.model";
 
@@ -22,8 +22,15 @@ import { WorkSheduleRow } from "../../models/work-shedule-row.model";
     ]
 })
 export class WorkersTableComponent {
-    private readonly workersFacade = inject(WorkersFacade);
+    private readonly departmentService = inject(DepartmentManagementService);
     public readonly numbers = Array(31).fill(0).map((x,i)=>i+1);
-    public readonly workers = this.workersFacade.workers;
+    public workers = this.departmentService.getDataRows();
     public readonly employeeStatus = employeeStatus;
+    public readonly rowDataType = rowDataType;
+
+    constructor() {
+        effect(() => {
+            this.workers = this.departmentService.getDataRows();
+        })
+    }
 }

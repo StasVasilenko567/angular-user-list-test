@@ -29,7 +29,7 @@ export const workersFeature = createFeature({
             workersActions.loadWorkersSuccess,
             (state, action) => ({
                 ...state,
-                data: { workers: action.workers },
+                data: { workers: action.workers.slice().sort((a, b) => a.departmentId - b.departmentId)},
             })
         ),
         on(
