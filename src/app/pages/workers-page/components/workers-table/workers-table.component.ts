@@ -3,7 +3,7 @@ import { WorkersFacade } from "../../facades/workers.facade";
 import { CommonModule } from "@angular/common";
 import { employeeStatus } from "../../models/enums.models";
 import { WorkDayColorPipe } from "../../pipes/work-day/work-day-color.pipe";
-import { DepartmentManagementService, rowDataType } from "../../services/department-management.service";
+import { DepartmentManagementService, departmentSummary, rowDataType } from "../../services/department-management.service";
 import {MatMenuModule} from '@angular/material/menu';
 import { WorkSheduleRow } from "../../models/work-shedule-row.model";
 
@@ -32,5 +32,9 @@ export class WorkersTableComponent {
         effect(() => {
             this.workers = this.departmentService.getDataRows();
         })
+    }
+
+    public asWorkSheduleRow(data: WorkSheduleRow | departmentSummary): WorkSheduleRow {
+        return data as WorkSheduleRow;
     }
 }

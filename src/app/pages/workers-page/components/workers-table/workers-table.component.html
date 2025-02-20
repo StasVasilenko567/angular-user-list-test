@@ -9,14 +9,14 @@
         </tr>
         <tr scope="row" *ngFor="let worker of workers">
             <ng-template [ngIf]="worker.type === rowDataType.employee">
-                <th scope="row">{{ worker.data.employeeId }}</th>
-                <td>{{ worker.data.department }}</td>
-                <td>{{ worker.data.employee }}</td>
-                <td>{{ employeeStatus[worker.data.employeeStatus] }}</td>
-                <td *ngFor="let i of numbers" scope="row" class="{{ worker.data.collection[i] | dayColor }}">
-                    <span>{{ worker.data.collection[i].shift }}</span>
+                <th scope="row">{{ asWorkSheduleRow(worker.data).employeeId }}</th>
+                <td>{{ asWorkSheduleRow(worker.data).department }}</td>
+                <td>{{ asWorkSheduleRow(worker.data).employee }}</td>
+                <td>{{ employeeStatus[asWorkSheduleRow(worker.data).employeeStatus] }}</td>
+                <td *ngFor="let i of numbers" scope="row" class="{{ asWorkSheduleRow(worker.data).collection[i] | dayColor }}">
+                    <span>{{ asWorkSheduleRow(worker.data).collection[i].shift }}</span>
                     <br/>
-                    <span class="table__brigade">Б. №{{ worker.data.collection[i].departmentId }}</span>
+                    <span class="table__brigade">Б. №{{ asWorkSheduleRow(worker.data).collection[i].departmentId }}</span>
                 </td>
             </ng-template>
             <ng-template [ngIf]="worker.type === rowDataType.summary">

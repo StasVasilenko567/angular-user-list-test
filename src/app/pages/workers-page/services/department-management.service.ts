@@ -12,14 +12,14 @@ export enum rowDataType {
     summary, employee
 }
 
-interface departmentSummary {
+export type departmentSummary = {
     collection: number[];
     department: string;
 }
 
 export interface rowData {
     type: rowDataType;
-    data: any;
+    data: WorkSheduleRow | departmentSummary;
 }
 
 @Injectable()
