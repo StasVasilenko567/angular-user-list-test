@@ -13,13 +13,11 @@ export class HighlightDirective {
 
     @HostListener("mouseover", ['$event']) 
     public onMouseEnter(event: MouseEvent) {
-        event.stopPropagation();
         this.renderer.setStyle(event.target, "background-color", "rgb(224, 224, 224)");
     }
  
     @HostListener("mouseout", ['$event']) 
     public onMouseLeave(event: MouseEvent) {
-        event.stopPropagation();
         this.renderer.removeStyle(event.target, "background-color");
     }
 }
