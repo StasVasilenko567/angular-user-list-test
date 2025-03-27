@@ -10,13 +10,15 @@ export class HighlightDirective {
         this.renderer.setStyle(this.element.nativeElement, "cursor", "pointer");
     }
 
-    @HostListener("mouseenter") 
-    public onMouseEnter() {
-        this.renderer.addClass(this.element.nativeElement, "highlighted");
+    @HostListener("mouseover", ['$event']) 
+    public onMouseEnter(event: MouseEvent) {
+        event.stopPropagation();
+        this.renderer.addClass(event.target, "highlighted");
     }
  
-    @HostListener("mouseleave") 
-    public onMouseLeave() {
-        this.renderer.removeClass(this.element.nativeElement, "highlighted");
+    @HostListener("mouseout", ['$event']) 
+    public onMouseLeave(event: MouseEvent) {
+        event.stopPropagation();
+        this.renderer.removeClass(event.target, "highlighted");
     }
 }
