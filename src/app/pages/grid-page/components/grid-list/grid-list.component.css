@@ -1,0 +1,20 @@
+td, th {
+    padding: 10px;
+    border: 1px solid black;
+    margin: 0;
+    background-color: rgb(180, 180, 180);
+}
+
+th {
+    background-color: rgb(150, 150, 150);
+}
+
+table {
+    padding: 0;
+    border-collapse: collapse;
+    margin: 10px;
+}
+
+.highlighted {
+    background-color: rgb(224, 224, 224);
+}

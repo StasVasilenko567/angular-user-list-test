@@ -22,6 +22,10 @@ export const routes: Routes = [
         loadChildren: () => import('./pages/workers-page/workers-page.module').then(m => m.WorkersPageModule)
     },
     {
+        path: 'grid',
+        loadChildren: () => import('./pages/grid-page/grid-page.module').then(m => m.GridPageModule)
+    },
+    {
         path: '**',
         redirectTo: '/users',
     }
